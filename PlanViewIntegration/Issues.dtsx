@@ -1,0 +1,1898 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2018 6:19:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PARAIXI8265P"
+  DTS:CreatorName="HCA\ixi8265"
+  DTS:DTSID="{FB4E8544-AEF7-46F5-99CB-00CAAF20F010}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Issues"
+  DTS:PackageType="5"
+  DTS:VersionBuild="134"
+  DTS:VersionGUID="{35B652C9-D798-4200-8C48-65553ADBC9B2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XRDCWPDBSMSP03.AdventureWorks2012]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{80DE58E6-166D-4389-B6EF-AA1E33540880}"
+      DTS:ObjectName="XRDCWPDBSMSP03.AdventureWorks2012">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=XRDCWPDBSMSP03;Initial Catalog=AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8CA3F1D3-3588-4F2E-90AB-C777AE04CC46}"
+      DTS:ObjectName="xrdcwpdbsmsp03.PerViewDataMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp04.PlanViewDataMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5028737D-E151-4D20-8EFD-20E1E9F876F9}"
+      DTS:ObjectName="xrdcwpdbsmsp04.PlanViewDataMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp04;Initial Catalog=PlanViewDataMart;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AB7C64C0-07B7-4378-8909-54EAAF25417C}"
+      DTS:ObjectName="xrpswpdbsspp01.ProjectWebApp">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrpswpdbsspp01;User ID=hca\ixi8265;Initial Catalog=ProjectWebApp;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrpswqdbsspp01.ProjectWebApp]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C17714E5-8230-4892-A0EA-94D306C311F2}"
+      DTS:ObjectName="xrpswqdbsspp01.ProjectWebApp">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrpswqdbsspp01;Initial Catalog=ProjectWebApp;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{279BA946-3B52-4854-9967-946B57AF4982}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="mappedProject">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{08D78290-C812-4234-B1C2-3ADC7121D0B3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ppl_code">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F609BEB2-F5F7-467A-93F9-93C2E3CA5A48}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="projectUID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{935EB6D5-2575-4287-A902-EAC7C299607A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="projectUID1">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT Load PerView Issues"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5213C217-29C1-435F-B702-2E8EAF46CFB7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Load PerView Issues"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Load PerView Issues\OLE DST dim_issues"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DST dim_issues"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_issues]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[puid]"
+                      cachedDataType="bytes"
+                      cachedLength="8000"
+                      cachedName="puid"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[puid]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[ProjectUID]"
+                      cachedDataType="guid"
+                      cachedName="ProjectUID"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ProjectUID]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[ppl_code]"
+                      cachedDataType="str"
+                      cachedLength="55"
+                      cachedName="ppl_code"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ppl_code]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[IssueUniqueID]"
+                      cachedDataType="guid"
+                      cachedName="IssueUniqueID"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueUniqueID]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssueUniqueID]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Title]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[AssignedToResource]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="AssignedToResource"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[AssignedToResource]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[DueDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DueDate"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[DueDate]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Category]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Owner]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Owner"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Owner]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Resolution]"
+                      cachedDataType="nText"
+                      cachedName="Resolution"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Resolution]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Resolution]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[CreateByResource]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CreateByResource"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByResource]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[CreateByResource]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[ItemRelativeUrlPath]"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ItemRelativeUrlPath"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ItemRelativeUrlPath]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ItemRelativeUrlPath]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[IssueCount]"
+                      cachedDataType="i4"
+                      cachedName="IssueCount"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[issueCount]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssueCount]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Priority]"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Priority"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Priority]" />
+                    <inputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].Columns[Discussion]"
+                      cachedDataType="nText"
+                      cachedName="Discussion"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Discussion]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Discussion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                      dataType="guid"
+                      name="ProjectUID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      dataType="str"
+                      length="55"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueUniqueID]"
+                      dataType="guid"
+                      name="IssueUniqueID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueID]"
+                      dataType="i4"
+                      name="IssueID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      dataType="str"
+                      length="100"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                      dataType="str"
+                      length="100"
+                      name="AssignedToResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfAttachments]"
+                      dataType="i4"
+                      name="NumberOfAttachments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                      dataType="dbTimeStamp"
+                      name="DueDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      dataType="str"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="str"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
+                      dataType="str"
+                      length="100"
+                      name="Priority" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                      dataType="str"
+                      length="100"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Discussion]"
+                      dataType="nText"
+                      name="Discussion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Resolution]"
+                      dataType="nText"
+                      name="Resolution" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByResource]"
+                      dataType="str"
+                      length="100"
+                      name="CreateByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByResource]"
+                      dataType="str"
+                      length="100"
+                      name="ModifiedByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IsFolder]"
+                      dataType="bool"
+                      name="IsFolder" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ItemRelativeUrlPath]"
+                      dataType="str"
+                      length="1024"
+                      name="ItemRelativeUrlPath" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToUserClaimsAccount]"
+                      dataType="str"
+                      length="100"
+                      name="AssignedToUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByUserClaimsAccount]"
+                      dataType="str"
+                      length="100"
+                      name="CreateByUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByUserClaimsAccount]"
+                      dataType="str"
+                      length="100"
+                      name="ModifiedByUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[issueCount]"
+                      dataType="i4"
+                      name="issueCount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE DST dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE DST dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE DST dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE SRC PerView Issues"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT        TOP (200) HASHBYTES('SHA1', CAST(ProjectUID AS char(40))) AS puid, ProjectUID, cast('' as nvarchar(55)) AS ppl_code
+,IssueUniqueID
+,Title
+,AssignedToResource
+,DueDate
+,Category
+,Status
+,Priority
+,Owner
+,Discussion
+,Resolution
+,CreateByResource
+,CreatedDate
+,ItemRelativeUrlPath
+,TasksLinkedToIssue
+,RisksLinkedToIssue
+,IssuesLinkedToIssue
+,DocumentsAttachedToIssue
+,IssueCount
+FROM            MSP_wssIssue_OlapView
+WHERE [Status] NOT IN ('Closed')</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[puid]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                      length="8000"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[puid]"
+                      name="puid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ProjectUID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[ProjectUID]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ProjectUID]"
+                      name="ProjectUID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ppl_code]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[ppl_code]"
+                      length="55"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ppl_code]"
+                      name="ppl_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssueUniqueID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[IssueUniqueID]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssueUniqueID]"
+                      name="IssueUniqueID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[AssignedToResource]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[AssignedToResource]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[AssignedToResource]"
+                      name="AssignedToResource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[DueDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[DueDate]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[DueDate]"
+                      name="DueDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Category]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Status]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Priority]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Priority]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Priority]"
+                      name="Priority"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Owner]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Owner]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Owner]"
+                      name="Owner"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Discussion]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Discussion]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Discussion]"
+                      name="Discussion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Resolution]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Resolution]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[Resolution]"
+                      name="Resolution"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[CreateByResource]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[CreateByResource]"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[CreateByResource]"
+                      name="CreateByResource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ItemRelativeUrlPath]"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[ItemRelativeUrlPath]"
+                      length="1024"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[ItemRelativeUrlPath]"
+                      name="ItemRelativeUrlPath"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[TasksLinkedToIssue]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[TasksLinkedToIssue]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[TasksLinkedToIssue]"
+                      name="TasksLinkedToIssue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[RisksLinkedToIssue]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[RisksLinkedToIssue]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[RisksLinkedToIssue]"
+                      name="RisksLinkedToIssue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssuesLinkedToIssue]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[IssuesLinkedToIssue]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssuesLinkedToIssue]"
+                      name="IssuesLinkedToIssue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[DocumentsAttachedToIssue]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[DocumentsAttachedToIssue]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[DocumentsAttachedToIssue]"
+                      name="DocumentsAttachedToIssue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssueCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[IssueCount]"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].Columns[IssueCount]"
+                      name="IssueCount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                      dataType="bytes"
+                      length="8000"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[ProjectUID]"
+                      dataType="guid"
+                      name="ProjectUID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[ppl_code]"
+                      dataType="str"
+                      length="55"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[IssueUniqueID]"
+                      dataType="guid"
+                      name="IssueUniqueID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="str"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[AssignedToResource]"
+                      dataType="str"
+                      length="255"
+                      name="AssignedToResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[DueDate]"
+                      dataType="dbTimeStamp"
+                      name="DueDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      dataType="str"
+                      length="255"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      dataType="str"
+                      length="255"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Priority]"
+                      dataType="str"
+                      length="255"
+                      name="Priority" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Owner]"
+                      dataType="str"
+                      length="255"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Discussion]"
+                      dataType="nText"
+                      name="Discussion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[Resolution]"
+                      dataType="nText"
+                      name="Resolution" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[CreateByResource]"
+                      dataType="str"
+                      length="255"
+                      name="CreateByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[ItemRelativeUrlPath]"
+                      dataType="str"
+                      length="1024"
+                      name="ItemRelativeUrlPath" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[TasksLinkedToIssue]"
+                      dataType="i4"
+                      name="TasksLinkedToIssue" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[RisksLinkedToIssue]"
+                      dataType="i4"
+                      name="RisksLinkedToIssue" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[IssuesLinkedToIssue]"
+                      dataType="i4"
+                      name="IssuesLinkedToIssue" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[DocumentsAttachedToIssue]"
+                      dataType="i4"
+                      name="DocumentsAttachedToIssue" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output].ExternalColumns[IssueCount]"
+                      dataType="i4"
+                      name="IssueCount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[puid]"
+                      dataType="bytes"
+                      length="8000"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[puid]"
+                      name="puid" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ProjectUID]"
+                      dataType="guid"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ProjectUID]"
+                      name="ProjectUID" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
+                      dataType="str"
+                      length="55"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
+                      name="ppl_code" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[IssueUniqueID]"
+                      dataType="guid"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[IssueUniqueID]"
+                      name="IssueUniqueID" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[AssignedToResource]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[AssignedToResource]"
+                      name="AssignedToResource" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[DueDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[DueDate]"
+                      name="DueDate" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Priority]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Priority]"
+                      name="Priority" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Owner]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Owner]"
+                      name="Owner" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Discussion]"
+                      dataType="nText"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Discussion]"
+                      name="Discussion" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Resolution]"
+                      dataType="nText"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[Resolution]"
+                      name="Resolution" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[CreateByResource]"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[CreateByResource]"
+                      name="CreateByResource" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ItemRelativeUrlPath]"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ItemRelativeUrlPath]"
+                      name="ItemRelativeUrlPath" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[TasksLinkedToIssue]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[TasksLinkedToIssue]"
+                      name="TasksLinkedToIssue" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[RisksLinkedToIssue]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[RisksLinkedToIssue]"
+                      name="RisksLinkedToIssue" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[IssuesLinkedToIssue]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[IssuesLinkedToIssue]"
+                      name="IssuesLinkedToIssue" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[DocumentsAttachedToIssue]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[DocumentsAttachedToIssue]"
+                      name="DocumentsAttachedToIssue" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[IssueCount]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[IssueCount]"
+                      name="IssueCount" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Load PerView Issues.Paths[OLE DB Source Output]"
+              endId="Package\DFT Load PerView Issues\OLE DST dim_issues.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Load PerView Issues\OLE SRC PerView Issues.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{FAC87491-1BA3-4E3D-85F9-483303CE06B0}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{83339C57-0D7B-4DAD-AC87-5856AE91A59A}"
+        DTS:ObjectName="{83339C57-0D7B-4DAD-AC87-5856AE91A59A}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::mappedProject" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\DFT Load PlanView Issues"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5342444D-7A3F-4F19-A905-87B21D463AA0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Load PlanView Issues"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB dim_issues"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[dim_issues]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                      connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].Columns[name]"
+                          cachedDataType="str"
+                          cachedLength="4000"
+                          cachedName="name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].Columns[description]"
+                          cachedDataType="str"
+                          cachedLength="4000"
+                          cachedName="description"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Discussion]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[description]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].Columns[resp_email]"
+                          cachedDataType="str"
+                          cachedLength="55"
+                          cachedName="resp_email"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[resp_email]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].Columns[full_name]"
+                          cachedDataType="str"
+                          cachedLength="55"
+                          cachedName="full_name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[full_name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].Columns[planViewCode]"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="planViewCode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[planViewCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].Columns[puid]"
+                          cachedDataType="bytes"
+                          cachedLength="8000"
+                          cachedName="puid"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[puid]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                          codePage="1252"
+                          dataType="str"
+                          length="42"
+                          name="puid" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                          dataType="str"
+                          length="55"
+                          name="ppl_code" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                          dataType="guid"
+                          name="ProjectUID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueUniqueID]"
+                          dataType="guid"
+                          name="IssueUniqueID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueID]"
+                          dataType="i4"
+                          name="IssueID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                          dataType="str"
+                          length="100"
+                          name="Title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                          dataType="str"
+                          length="100"
+                          name="AssignedToResource" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfAttachments]"
+                          dataType="i4"
+                          name="NumberOfAttachments" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                          dataType="dbTimeStamp"
+                          name="DueDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          dataType="str"
+                          length="100"
+                          name="Category" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          dataType="str"
+                          length="100"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
+                          dataType="str"
+                          length="100"
+                          name="Priority" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                          dataType="str"
+                          length="100"
+                          name="Owner" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Discussion]"
+                          dataType="nText"
+                          name="Discussion" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[Resolution]"
+                          dataType="nText"
+                          name="Resolution" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByResource]"
+                          dataType="str"
+                          length="100"
+                          name="CreateByResource" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                          dataType="dbTimeStamp"
+                          name="CreatedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByResource]"
+                          dataType="str"
+                          length="100"
+                          name="ModifiedByResource" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[IsFolder]"
+                          dataType="bool"
+                          name="IsFolder" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ItemRelativeUrlPath]"
+                          dataType="str"
+                          length="1024"
+                          name="ItemRelativeUrlPath" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToUserClaimsAccount]"
+                          dataType="str"
+                          length="100"
+                          name="AssignedToUserClaimsAccount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByUserClaimsAccount]"
+                          dataType="str"
+                          length="100"
+                          name="CreateByUserClaimsAccount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByUserClaimsAccount]"
+                          dataType="str"
+                          length="100"
+                          name="ModifiedByUserClaimsAccount" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input].ExternalColumns[issueCount]"
+                          dataType="i4"
+                          name="issueCount" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source PlanView Issues"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+
+cast(? as nvarchar(30)) as planViewCode
+,cri_code
+,HASHBYTES('SHA1', CAST(cri_code as char(40))) AS puid
+,full_name
+,name
+,[description]
+,resp_email
+
+
+FROM [dbo].[uf_getIssues] (?)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"@ppl_code:Input",{08D78290-C812-4234-B1C2-3ADC7121D0B3};"@ppl_code:Input",{08D78290-C812-4234-B1C2-3ADC7121D0B3};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp04.PlanViewDataMart]"
+                      connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp04.PlanViewDataMart]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[cri_code]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[cri_code]"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[cri_code]"
+                          name="cri_code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[full_name]"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[full_name]"
+                          length="55"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[full_name]"
+                          name="full_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[name]"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          length="4000"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[name]"
+                          name="name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[description]"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[description]"
+                          length="4000"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[description]"
+                          name="description"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[resp_email]"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[resp_email]"
+                          length="55"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[resp_email]"
+                          name="resp_email"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[planViewCode]"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[planViewCode]"
+                          length="30"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[planViewCode]"
+                          name="planViewCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[puid]"
+                          dataType="bytes"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                          length="8000"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].Columns[puid]"
+                          name="puid"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[cri_code]"
+                          dataType="i4"
+                          name="cri_code" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[full_name]"
+                          dataType="str"
+                          length="55"
+                          name="full_name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          dataType="str"
+                          length="4000"
+                          name="name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[description]"
+                          dataType="str"
+                          length="4000"
+                          name="description" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[resp_email]"
+                          dataType="str"
+                          length="55"
+                          name="resp_email" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[planViewCode]"
+                          dataType="str"
+                          length="30"
+                          name="planViewCode" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                          dataType="bytes"
+                          length="8000"
+                          name="puid" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[planViewCode]"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[planViewCode]"
+                          name="planViewCode" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[cri_code]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[cri_code]"
+                          name="cri_code" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[puid]"
+                          dataType="bytes"
+                          length="8000"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[puid]"
+                          name="puid" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[full_name]"
+                          dataType="str"
+                          length="55"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[full_name]"
+                          name="full_name" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[name]"
+                          dataType="str"
+                          length="4000"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[name]"
+                          name="name" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[description]"
+                          dataType="str"
+                          length="4000"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[description]"
+                          name="description" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[resp_email]"
+                          dataType="str"
+                          length="55"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[resp_email]"
+                          name="resp_email" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\DFT Load PlanView Issues.Paths[OLE DB Source Output]"
+                  endId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{5F6D989C-437F-4007-A774-53CEDF29C554}"
+          DTS:ObjectName="{5F6D989C-437F-4007-A774-53CEDF29C554}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::ppl_code" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Populate Mapper Test Data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{67CCEE57-8144-4CC0-9E88-D7273D58627F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Populate Mapper Test Data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8CA3F1D3-3588-4F2E-90AB-C777AE04CC46}"
+          SQLTask:SqlStatementSource="&#xA;&#xA;truncate table mapping&#xA; &#xA;DECLARE @uuid VARCHAR(50)&#xA;Declare @pplcode char(55) &#xA;&#xA;SET @uuid = 'a89b1acd95016ae6b9c8aabb07da2010'&#xA;set @pplcode = '153502'&#xA;&#xA;insert into Mapping   &#xA;SELECT  CAST(&#xA;        SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA;        SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING(@uuid, 21, 12)&#xA;        AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;&#x9;&#x9;,@pplcode as ppl_code&#xA;&#xA;SET @uuid = '17EB1019B855E61180E40050568F1156'&#xA;set @pplcode = '100001'&#xA;&#xA;insert into Mapping   &#xA;SELECT  CAST(&#xA;        SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA;        SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING(@uuid, 21, 12)&#xA;        AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;&#x9;&#x9;,@pplcode as ppl_code&#xA;&#xA;SET @uuid = 'DC16EBA0E16EE61180E60050568F1156'&#xA;set @pplcode = '106763'&#xA;&#xA;insert into Mapping   &#xA;SELECT  CAST(&#xA;        SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA;        SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING(@uuid, 21, 12)&#xA;        AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;&#x9;&#x9;,@pplcode as ppl_code&#xA;&#xA;&#xA;SET @uuid = '649EE4A93580E61180E90050568F1156'&#xA;set @pplcode = '114565'&#xA;&#xA;insert into Mapping   &#xA;SELECT  CAST(&#xA;        SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA;        SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING(@uuid, 21, 12)&#xA;        AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;&#x9;&#x9;,@pplcode as ppl_code&#xA;&#xA;SET @uuid = '649EE4A93580E61180E90050568F1156'&#xA;set @pplcode = '157192'&#xA;&#xA;insert into Mapping   &#xA;SELECT  CAST(&#xA;        SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA;        SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING(@uuid, 21, 12)&#xA;        AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;&#x9;&#x9;,@pplcode as ppl_code&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Truncate Dim_Issues"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FB4DDF2A-364C-4AE7-808F-17A406D69D99}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Truncate Dim_Issues"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8CA3F1D3-3588-4F2E-90AB-C777AE04CC46}"
+          SQLTask:SqlStatementSource="truncate table dim_issues" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQLGetMappedProjects"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0C877CB4-3D76-49B6-BA84-54F6EEE5F9D4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQLGetMappedProjects"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8CA3F1D3-3588-4F2E-90AB-C777AE04CC46}"
+          SQLTask:SqlStatementSource="SELECT  cast (ppl_code as nvarchar)as ppl_code&#xA;   FROM [PerViewDataMart].[dbo].[Mapping] &#xA;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::mappedProject" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A25263D4-2489-4011-84D3-F226929FD93F}"
+      DTS:From="Package\SQLGetMappedProjects"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E6C02EC9-A04F-4564-B148-A44FB7EBEEF5}"
+      DTS:From="Package\SQL Truncate Dim_Issues"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DFT Load PerView Issues" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="198,42"
+          Id="Package\DFT Load PerView Issues"
+          TopLeft="259.384615398723,135.78787881634" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Foreach Loop Container\DFT Load PlanView Issues"
+          TopLeft="97.7384755332099,5.5" />
+        <ContainerLayout
+          HeaderHeight="230"
+          IsExpanded="True"
+          PanelSize="419,127"
+          Size="419,357"
+          Id="Package\Foreach Loop Container"
+          TopLeft="198.461545741065,316.727284168738" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\SQL Populate Mapper Test Data"
+          TopLeft="205.461539872299,755.151529353731" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\SQL Truncate Dim_Issues"
+          TopLeft="29.8461440836886,16.0303024895373" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\SQLGetMappedProjects"
+          TopLeft="276.556399995476,210.182819478782" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="375.556399995476,252.182819478782">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="32.405145745589,64.544464689956"
+              Start="0,0"
+              End="32.405145745589,57.044464689956">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.272232344978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.272232344978"
+                    Point2="0,32.272232344978"
+                    Point3="4,32.272232344978" />
+                  <mssgle:LineSegment
+                    End="28.405145745589,32.272232344978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.405145745589,32.272232344978"
+                    Point2="32.405145745589,32.272232344978"
+                    Point3="32.405145745589,36.272232344978" />
+                  <mssgle:LineSegment
+                    End="32.405145745589,57.044464689956" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="129.846144083689,57.6303024895373">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="228.338471315035,78.1575763268029"
+              Start="0,0"
+              End="228.338471315035,70.6575763268029">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0787881634014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.0787881634014"
+                    Point2="0,39.0787881634014"
+                    Point3="4,39.0787881634014" />
+                  <mssgle:LineSegment
+                    End="224.338471315035,39.0787881634014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="224.338471315035,39.0787881634014"
+                    Point2="228.338471315035,39.0787881634014"
+                    Point3="228.338471315035,43.0787881634014" />
+                  <mssgle:LineSegment
+                    End="228.338471315035,70.6575763268029" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Only load PlanView Projects that have been associated with PerView Projects via &quot;mapping&quot;"
+          ParentId="Package"
+          Size="394,53"
+          Id="36ce34ea-37c4-45d8-bbfa-50beb17757a6"
+          TopLeft="500.076923006385,208.21212118366">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo>
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Load PerView Issues">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\DFT Load PerView Issues\OLE SRC PerView Issues"
+          TopLeft="272.538461558212,75.0545454203918" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\DFT Load PerView Issues\OLE DST dim_issues"
+          TopLeft="341.692307681022,237.315151526536" />
+        <EdgeLayout
+          Id="Package\DFT Load PerView Issues.Paths[OLE DB Source Output]"
+          TopLeft="369.338461558212,116.654545420392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="59.9538461228096,120.660606106144"
+              Start="0,0"
+              End="59.9538461228096,113.160606106144">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.3303030530721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.3303030530721"
+                    Point2="0,60.3303030530721"
+                    Point3="4,60.3303030530721" />
+                  <mssgle:LineSegment
+                    End="55.9538461228096,60.3303030530721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.9538461228096,60.3303030530721"
+                    Point2="59.9538461228096,60.3303030530721"
+                    Point3="59.9538461228096,64.3303030530721" />
+                  <mssgle:LineSegment
+                    End="59.9538461228096,113.160606106144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.12680587390479,65.3303030530721,41.700234375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PerView Issues\OLE DST dim_issues">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PerView Issues\OLE SRC PerView Issues">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\DFT Load PlanView Issues">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues"
+          TopLeft="586.785714285714,420.928571428571" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues"
+          TopLeft="554.928571428572,296.071428571428" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\DFT Load PlanView Issues.Paths[OLE DB Source Output]"
+          TopLeft="670.107142857143,338.071428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,82.857142857143"
+              Start="0,0"
+              End="0,75.357142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.357142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="inner join on mapped projects - throws out all other PlanView Projects"
+          ParentId="Package\Foreach Loop Container\DFT Load PlanView Issues"
+          Size="235,53"
+          Id="10ebd506-bf90-4b94-8e00-9f57d8f63e8d"
+          TopLeft="793.48051948052,291.396103896104">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo>
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB dim_issues">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\DFT Load PlanView Issues\OLE DB Source PlanView Issues">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

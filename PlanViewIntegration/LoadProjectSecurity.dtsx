@@ -1,0 +1,604 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/3/2018 9:24:42 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PARAIXI8265P"
+  DTS:CreatorName="HCA\IXI8265"
+  DTS:DTSID="{B8A16BE3-8D9F-46B3-8FC2-B1CD6A7991C3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadProjectSecurity"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{8E637E87-371B-43BC-8858-823ADF3A406F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT populate project_security table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{742900A6-7539-45EA-AA47-EF49D0FF4D54}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT populate project_security table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT populate project_security table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[project_security]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT populate project_security table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8303E996-85B4-4329-B6E3-6153BD3A0232}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Res_UID]"
+                      cachedDataType="guid"
+                      cachedName="Res_UID"
+                      externalMetadataColumnId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[resuid]"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].Columns[Res_UID]" />
+                    <inputColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Proj_UID_Allowed]"
+                      cachedDataType="guid"
+                      cachedName="Proj_UID_Allowed"
+                      externalMetadataColumnId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].Columns[Proj_UID_Allowed]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[resuid]"
+                      dataType="guid"
+                      name="resuid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                      dataType="guid"
+                      name="ProjectUID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[projectName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="projectName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResourceNTAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ResourceNTAccount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT populate project_security table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT populate project_security table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT populate project_security table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT populate project_security table\OLE Get"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE Get"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_ProjectSecurity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT populate project_security table\OLE Get.Connections[OleDbConnection]"
+                  connectionManagerID="{6A5D8A31-7503-48D7-822E-F30E1316E6BB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[xrpswpdbsspp01.PerViewDataMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].Columns[Res_UID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].ExternalColumns[Res_UID]"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].Columns[Res_UID]"
+                      name="Res_UID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].Columns[Proj_UID_Allowed]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].ExternalColumns[Proj_UID_Allowed]"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].Columns[Proj_UID_Allowed]"
+                      name="Proj_UID_Allowed"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].ExternalColumns[Res_UID]"
+                      dataType="guid"
+                      name="Res_UID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output].ExternalColumns[Proj_UID_Allowed]"
+                      dataType="guid"
+                      name="Proj_UID_Allowed" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[Res_UID]"
+                      dataType="guid"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[Res_UID]"
+                      name="Res_UID" />
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[Proj_UID_Allowed]"
+                      dataType="guid"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[Proj_UID_Allowed]"
+                      name="Proj_UID_Allowed" />
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT populate project_security table.Paths[OLE DB Source Output]"
+              endId="Package\DFT populate project_security table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT populate project_security table\OLE Get.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL truncate project_security table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E6E5EEBF-5945-4A8B-B1EB-23A7DCCB1E7B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL truncate project_security table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="truncate TABLE [project_security]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Update 34"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{33C38EC8-A630-4468-9027-A51309E4C535}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Update 34"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="  &#xA;  update ps &#xA;  set ps.ResourceNTAccount = r.resourceNTAccount&#xA;  from [project_security] ps inner join dim_resources r on ps.resUID = r.ResourceUID&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Update projectName"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C8A8C3CE-228F-46AA-B431-C239E38C32A2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Update projectName"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="  update ps &#xA;  set ps.ProjectName = p.ProjectName&#xA;  from [project_security] ps inner join dim_project p on ps.ProjectUID = p.ProjectUID&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AA1BE8C4-12C9-499B-998D-4AD27392297B}"
+      DTS:From="Package\SQL truncate project_security table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT populate project_security table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8BEA61EF-1758-4A02-B8BF-303B97CF4B25}"
+      DTS:From="Package\DFT populate project_security table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL Update projectName" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2B069FC7-450C-4D25-8A1E-33BC76A08681}"
+      DTS:From="Package\SQL Update projectName"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SQL Update 34" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT populate project_security table"
+          TopLeft="225,242" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\SQL truncate project_security table"
+          TopLeft="216,154" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\SQL Update 34"
+          TopLeft="272,438" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\SQL Update projectName"
+          TopLeft="233,353" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="339.5,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="10,46"
+              Start="0,0"
+              End="10,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="6,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,23"
+                    Point2="10,23"
+                    Point3="10,27" />
+                  <mssgle:LineSegment
+                    End="10,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="349.5,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-16.5,69"
+              Start="0,0"
+              End="-16.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-12.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5,34.5"
+                    Point2="-16.5,34.5"
+                    Point3="-16.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-16.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="333,395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="15,43"
+              Start="0,0"
+              End="15,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="11,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,21.5"
+                    Point2="15,21.5"
+                    Point3="15,25.5" />
+                  <mssgle:LineSegment
+                    End="15,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT populate project_security table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="119,42"
+          Id="Package\DFT populate project_security table\OLE Get"
+          TopLeft="224,127" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\DFT populate project_security table\OLE DB Destination"
+          TopLeft="213,232" />
+        <EdgeLayout
+          Id="Package\DFT populate project_security table.Paths[OLE DB Source Output]"
+          TopLeft="283.5,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="16,63"
+              Start="0,0"
+              End="16,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="12,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,31.5"
+                    Point2="16,31.5"
+                    Point3="16,35.5" />
+                  <mssgle:LineSegment
+                    End="16,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT populate project_security table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT populate project_security table\OLE Get">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

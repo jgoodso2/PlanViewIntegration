@@ -1,0 +1,247 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/8/2018 1:34:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PARAIXI8265P"
+  DTS:CreatorName="HCA\IXI8265"
+  DTS:DTSID="{AEEEAD81-3764-408A-90F6-26F6EA575956}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="InitializeDataMart"
+  DTS:PackageType="5"
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{D0B5EB62-2DAD-4EF5-85C3-4CF11D115EC5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create dim_assignment Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b704240d-4aa7-45f8-97a0-f492ad2d53e5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create dim_assignment Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="USE [PerViewDataMart]&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_assignment]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [dim_assignment]&#xA;END &#xA;&#xA;CREATE TABLE [dbo].[dim_assignment](&#xA; [puid] [char](42) NULL,&#xA; [tuid] [char](42) NULL,&#xA; [resourceUID] uniqueIdentifier null, &#xA; [TaskUID] [uniqueidentifier] NULL,&#xA; [assignmentWork] decimal(25,6) null,&#xA; [assignmentActualWork] decimal(25,6) null,&#xA; [AssignmentStartDate] datetime null,&#xA; [AssignmentFinishDate] datetime null,&#xA; [AssignmentActualStartDate] datetime null,&#xA; [AssignmentActualFinishDate] datetime null,&#xA; [AssignmentCreatedDate] datetime null,&#xA; [AssignmentModifiedDate] datetime null,&#xA; [AssignmentResourcePlanWork] decimal(25,6) null,&#xA; [TaskIsActive] bit null,&#xA; [AssignmentRemainingWork] decimal(25,6) null, &#xA; [AssignmentCount] int null,   &#xA; [AssignmentBaseline0Work] decimal(25,6) null,&#xA; [Task Comments_T] varchar(4000) null&#xA;&#xA; &#xA;) ON [PRIMARY]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create dim_project Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5B6218F0-016F-4685-BDC0-A6173769E4BF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create dim_project Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="&#xA;USE PerViewDataMart&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_project]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE dim_project&#xA;END &#xA;&#xA;&#xA;CREATE TABLE [dbo].[dim_project](&#xA;&#x9;[puid] [char](42) NULL,&#xA;&#x9;[ProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[ppl_code] [varchar](55) NULL,&#xA;&#x9;[epm_platform] [varchar] (12) null,&#xA;&#x9;[ProjectName] [varchar](255) NULL,&#xA;&#x9;[ProjectDescription] [varchar](max) NULL,&#xA;&#x9;[ProjectAuthorName] [varchar](255) NULL,&#xA;&#x9;[ProjectOwnerResourceUID] [uniqueidentifier] NULL,&#xA;&#x9;[EnterpriseProjectTypeUID] [uniqueidentifier] NULL,&#xA;&#x9;[ProjectStartDate] [datetime] NULL,&#xA;&#x9;[ProjectFinishDate] [datetime] NULL,&#xA;&#x9;[ProjectStatusDate] [datetime] NULL,&#xA;&#x9;[ProjectManagerName] [varchar](255) NULL,&#xA;&#x9;[ProjectType] [int] NULL,&#xA;&#x9;[ProjectWorkspaceInternalHRef] [varchar](1024) NULL,&#xA;&#x9;[ProjectCategoryName] [varchar](255) NULL,&#xA;&#x9;[ProjectCompanyName] [varchar](255) NULL,&#xA;&#x9;[ProjectKeywords] [varchar](255) NULL,&#xA;&#x9;[ProjectSubject] [varchar](255) NULL,&#xA;&#x9;[ProjectTitle] [varchar](255) NULL,&#xA;&#x9;[ResourcePlanUtilizationType] [smallint] NULL,&#xA;&#x9;[ResourcePlanUtilizationDate] [datetime] NULL,&#xA;&#x9;[ProjectModifiedRevisionCounter] [int] NULL,&#xA;&#x9;[ProjectCreatedDate] [datetime] NULL,&#xA;&#x9;[ProjectModifiedDate] [datetime] NULL,&#xA;&#x9;[ProjectCalendarDuration] [int] NULL,&#xA;&#x9;[ProjectVisibilityMode] [bit] NULL,&#xA;&#x9;[ParentProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[ProjectDurationVariance] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectStartVariance] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectFinishVariance] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectDuration] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectActualDuration] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectActualStartDate] [datetime] NULL,&#xA;&#x9;[ProjectActualFinishDate] [datetime] NULL,&#xA;&#x9;[ProjectPercentCompleted] [smallint] NULL,&#xA;&#x9;[ProjectResourcePlanWork] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectRemainingDuration] [numeric](26, 6) NULL,&#xA;&#x9;[ProjectOwnerName] [varchar](255) NULL,&#xA;&#x9;[ProjectCount] [int] NULL,&#xA;&#x9;[ProjectWork] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectBaseline0Work] [numeric](25, 6) NULL,&#xA;&#x9;[ProjectBaseline0StartDate] [datetime] NULL,&#xA;&#x9;[ProjectBaseline0FinishDate] [datetime] NULL,&#xA;&#x9;[ProjectBaseline0Duration] [numeric](25, 6) NULL,&#xA;&#x9;[FDI] [varchar](4000) NULL,&#xA;&#x9;[PM Assessed Project Health - Prior Period] [varchar](12) NULL,&#xA;&#x9;[Upcoming Reporting Period Key Tasks] [varchar](4000) NULL,&#xA;&#x9;[Project ID] int NULL,&#xA;&#x9;[Level 1] varchar(4000) null,&#xA;&#x9;[Level 2] varchar(4000) null,&#xA;&#x9;[Level 3] varchar(4000) null,&#xA;&#x9;[Level 4] varchar(4000) null,&#xA;&#x9;[Level 5] varchar(4000) null,&#xA;&#x9;[Level 6] varchar(4000) null,&#xA;&#x9;[Level 7] varchar(4000) null,&#xA;&#x9;[Line of Business] [varchar](255) NULL,&#xA;&#x9;[Parent Program] [varchar](255) NULL,&#xA;&#x9;[Project Active Status] [varchar](255) NULL,&#xA;&#x9;[Project Links] [varchar](4000) NULL,&#xA;&#x9;[Reporting Start Date] [datetime] NULL,&#xA;&#x9;[Initiative] [varchar](255) NULL,&#xA;&#x9;[ProjectID] [varchar](255) NULL,&#xA;&#x9;[Overall Status Commentary] [varchar](4000) NULL,&#xA;&#x9;[Milestone Hit Rate] [varchar](4000) NULL,&#xA;&#x9;[Overdue Deliverables] [varchar](4000) NULL,&#xA;&#x9;[Corporate or Divisional Strategy] [varchar](4000) NULL,&#xA;&#x9;[Deliverables Hit Rate] [varchar](4000) NULL,&#xA;&#x9;[Milestone Status Commentary] [varchar](4000) NULL,&#xA;&#x9;[Service Line] [varchar](255) NULL,&#xA;&#x9;[Functional Area] [varchar](4000) NULL,&#xA;&#x9;[Schedule Status Commentary] [varchar](4000) NULL,&#xA;&#x9;[Business Owner] [varchar](255) NULL,&#xA;&#x9;[Project Client] [varchar](255) NULL,&#xA;&#x9;[Project Sponsor] [varchar](255) NULL,&#xA;&#x9;[Accomplished Current Reporting Period] [varchar](4000) NULL,&#xA;&#x9;[Service Center] [varchar](255) NULL,&#xA;&#x9;[Deliverable Status Commentary] [varchar](4000) NULL,&#xA;&#x9;[Project Tier] [varchar](255) NULL,&#xA;&#x9;[Condition] [varchar](255) NULL,&#xA;&#x9;[Project Category] [varchar](255) NULL,&#xA;&#x9;[Go Live Date] [datetime] NULL,&#xA;&#x9;[PM Assessed Project Health] [varchar](12) NULL,&#xA;&#x9;[PMHealth] [int] NULL,&#xA;&#x9;[PMHealth_Parallon] [int] NULL,&#xA;&#x9;[PMHealth_Prior] [int] Null,&#xA;&#x9;[Other Key Dates] [varchar](4000) NULL,&#xA;&#x9;[Overdue Milestones] [varchar](4000) NULL,&#xA;&#x9;[Overall Calculated Status] [varchar](255) NULL,&#xA;&#x9;[Upcoming Period] [varchar](4000) NULL,&#xA;&#x9;[Executive Status Summary] [varchar](4000) NULL,&#xA;&#x9;[Reporting End Date] [datetime] NULL,&#xA;&#x9;[Product Line] [varchar](255) NULL,&#xA;&#x9;[Schedule Variance] [varchar](255) NULL,&#xA;&#x9;[Project Phase] [varchar](255) NULL,&#xA;&#x9;[Project Client Display] [varchar](4000) NULL,&#xA;&#x9;[Project Manager Notes] [varchar](4000) NULL,&#xA;&#x9;[Project Priority] [varchar](255) NULL,&#xA;&#x9;[PM Allocation] [numeric](25, 6) NULL,&#xA;&#x9;[Project Outcomes Expected] [varchar](4000) NULL,&#xA;&#x9;[Supply Chain Service Center] [varchar](4000) NULL,&#xA;&#x9;[Supply Chain Distribution Center] [varchar](4000) NULL,&#xA;&#x9;[Exclude from Exec Status Summary Report] [varchar](4000) NULL,&#xA;&#x9;[Project Chargeback Category] [varchar](4000) NULL,&#xA;&#x9;[Medicare ChargeBack Allowable] [varchar](4000) NULL,&#xA;&#x9;[Shell Project Flag] [varchar](4000) NULL,&#xA;&#x9;[Project Code] [varchar](4000) NULL,&#xA;&#x9;[PM Engagement] [varchar](4000) NULL,&#xA;&#x9;[Portfolio Funding Source] [varchar](4000) NULL,&#xA;&#x9;[Project Lead] [varchar](4000) NULL,&#xA;&#x9;[SSC PM Impact] [varchar](4000) NULL,&#xA;&#x9;[Planview ID] [varchar](4000) NULL,&#xA;&#x9;[Prioritization Score] [varchar](4000) NULL,&#xA;&#x9;[Complexity Score] [varchar](4000) NULL&#xA;) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create dim_resource table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D8454479-72E7-4A45-9027-3AAE907817DA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create dim_resource table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="9">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="  USE [PerViewDataMart]&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_resources]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [dim_resources]&#xA;END &#xA;&#xA;CREATE TABLE [dbo].[dim_resources](&#xA;&#xA;&#x9;[resourceUID]  uniqueIdentifier null, &#xA;&#x9;[resourceNTAccount] varchar(20) null,&#xA;&#x9;[resourceEmailAddress] varchar(155) null,&#xA;&#x9;[resourceName] varchar(255) null,&#xA;&#x9;[resourceIsActive] bit null,&#xA;&#x9;[resourceIsGeneric] bit null, &#xA;&#x9;[resourceCount] int null, &#xA;&#x9;[RBS] varchar(4000) null, &#xA;&#x9;[time reporting exempt] varchar(4) null, &#xA;&#x9;[home location US] varchar(55) null, &#xA;&#x9;[department number] varchar(55) null,&#xA;&#x9;[employee type] varchar(55) null,&#xA;&#xA;&#x9;[Resource Title] varchar(55) null,&#xA;&#x9;[Resource Role] varchar(55) null, &#xA;&#xA;&#x9;[Last Connect] varchar(10) null,&#xA;&#x9;[GROUP1] varchar(255) null,&#xA;    [GROUP2] varchar(255) null,&#xA;    [GROUP3] varchar(255) null,&#xA;    [GROUP4] varchar(255) null,&#xA;&#x9;[Created_Date] date null&#xA;&#xA;&#x9;) on [PRIMARY]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create dim_task Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3ADDF2D4-FC30-495D-B547-08CA719A6CE3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create dim_task Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="USE [PerViewDataMart]&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_task]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [dim_task]&#xA;END &#xA;&#xA;CREATE TABLE [dbo].[dim_task](&#xA;&#x9;[puid] [char](42) NULL,&#xA;&#x9;[tuid] [char](42) NULL,&#xA;&#x9;[TaskUID] [uniqueidentifier] NULL,&#xA;&#x9;[task_id] [varchar](12) NULL,&#xA;&#x9;[TaskParentUID] [uniqueidentifier] NULL,&#xA;&#x9;[taskParentTuid] [char](42) NULL,&#xA;&#x9;[ProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[ppl_code] [varchar](50) NULL,&#xA;&#x9;[taskCount] [int] NULL,&#xA;&#x9;[TaskName] [varchar](255) NULL,&#xA;&#x9;[TaskOutlineLevel] [smallint] NULL,&#xA;&#x9;[TaskOutlineNumber] [varchar](255) NULL,&#xA;&#x9;[TaskIndex] [int] NULL,&#xA;&#x9;[TaskIsMilestone] [varchar](3) NULL,&#xA;&#x9;[TaskIsCritical] [varchar](3) NULL,&#xA;&#x9;[TaskIsSummary] [varchar](3) NULL,&#xA;&#x9;[TaskDurationVariance] [decimal](25, 2) NULL,&#xA;&#x9;[TaskStartVariance] [decimal](25, 2) NULL,&#xA;&#x9;[TaskFinishVariance] [decimal](25, 2) NULL,&#xA;&#x9;[TaskDuration] [decimal](25, 2) NULL,&#xA;&#x9;[TaskStartDate] [date] NULL,&#xA;&#x9;[TaskFinishDate] [date] NULL,&#xA;&#x9;[TaskPercentCompleted] [int] NULL,&#xA;&#x9;[TaskPercentWorkCompleted] [int] NULL,&#xA;&#x9;[TaskIsActive] [varchar](3) NULL,&#xA;&#x9;[TaskIsManuallyScheduled] [varchar](3) NULL,&#xA;&#x9;[TaskCreatedDate] [date] NULL,&#xA;&#x9;[TaskModifiedDate] [date] NULL,&#xA;&#x9;[TaskPhysicalPercentCompleted] [int] NULL,&#xA;&#x9;[TaskBaseline0StartDate] [date] NULL,&#xA;&#x9;[TaskBaseline0FinishDate] [date] NULL,&#xA;&#x9;[Report_Key_text] [varchar](50) NULL,&#xA;&#x9;[Report_Grouping_Text] [varchar](50) NULL,&#xA;&#x9;[Task Comments] [varchar](500) NULL,&#xA;&#x9;[TaskActualFinishDate] [date] NULL,&#xA;&#x9;[WBS] [varchar](50) NULL,&#xA;&#x9;[TaskActualStartDate] [date] NULL,&#xA;&#x9;[TaskBaseline0Duration] [int] NULL,&#xA;&#x9;[Key Task] [varchar](3) NULL,&#xA;&#x9;[Deliverable Flag] [varchar](3) NULL,&#xA;&#x9;[Milestone Flag] [varchar](3) NULL,&#xA;&#x9;[ActualFinishDateRange] [varchar](100) NULL,&#xA;&#x9;[Responsible Party] [varchar](50) NULL,&#xA;&#x9;[ForecastToFinish] [varchar](50) NULL,&#xA;&#x9;[ForecastToStart] [varchar](50) NULL,&#xA;&#x9;[BaselinedToFinish] [varchar](50) NULL,&#xA;&#x9;[BaselinedToStart] [varchar](50) NULL,&#xA;&#x9;[ISScheduledMilestone] [varchar](3) NULL,&#xA;&#x9;[ISCompletedMilestone] [varchar](3) NULL,&#xA;&#x9;[ISScheduledDeliverable] [varchar](3) NULL,&#xA;&#x9;[ISCompletedDeliverable] [varchar](3) NULL,&#xA;&#x9;[ISIncompletedTask] [varchar](3) NULL,&#xA;&#x9;[ISBaselinedToFinish] [varchar](3) NULL,&#xA;&#x9;[TaskIsBaselinedAndComplete] [varchar](3) NULL,&#xA;&#x9;[TaskDeliverableStartDate] [date] NULL,&#xA;    [TaskDeliverableFinishDate][date] NULL&#xA;) ON [PRIMARY]&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create Issues Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AD96EA6A-600A-4A1B-9E4E-3C03802D8C79}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create Issues Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="&#xA;USE PerViewDataMart&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_issues]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [dim_issues]&#xA;END &#xA;&#xA;&#xA;CREATE TABLE [dbo].[dim_issues](&#xA;&#x9;[puid] [char](42)  NULL,&#xA;&#x9;[iuid] [char](42)  NULL,&#xA;&#x9;[ppl_code] [varchar](12) NULL,&#xA;&#x9;[ProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[IssueUniqueID] [uniqueidentifier]  NULL,&#xA;&#x9;[IssueID] [int]  NULL,&#xA;&#x9;[Title] [varchar](100) NULL,&#xA;&#x9;[AssignedToResource] [varchar](100) NULL,&#xA;&#x9;[NumberOfAttachments] [int] NULL,&#xA;&#x9;[DueDate] [datetime] NULL,&#xA;&#x9;[Category] [varchar](100) NULL,&#xA;&#x9;[Status] [varchar](100) NULL,&#xA;&#x9;[Priority] [varchar](100) NULL,&#xA;&#x9;[Owner] [varchar](100) NULL,&#xA;&#x9;[Discussion] [varchar](max) NULL,&#xA;&#x9;[Resolution] [varchar](max) NULL,&#xA;&#x9;[CreateByResource] [varchar](100) NULL,&#xA;&#x9;[CreatedDate] [datetime] NULL,&#xA;&#x9;[ModifiedByResource] [varchar](100) NULL,&#xA;&#x9;[ModifiedDate] [datetime] NULL,&#xA;&#x9;[IsFolder] [bit] null,&#xA;&#x9;[ItemRelativeUrlPath] [varchar](1024) NULL,&#xA;&#x9;[AssignedToUserClaimsAccount] [varchar](100) NULL,&#xA;&#x9;[CreateByUserClaimsAccount] [varchar](100) NULL,&#xA;&#x9;[ModifiedByUserClaimsAccount] [varchar](100) NULL,&#xA;&#x9;[issueCount] [int] null &#xA;&#x9;)&#xA;&#xA;&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create Project Summary Fact Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Project Summary Table holds data needed for calculations and simple project statistics"
+      DTS:DTSID="{3BFAD9A8-7B70-4C3E-A7A3-9088555839FB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create Project Summary Fact Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="USE [PerViewDataMart]&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[EpmProjectSummary]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE EpmProjectSummary&#xA;END &#xA;&#xA;&#xA;CREATE TABLE [dbo].[EpmProjectSummary](&#xA;&#x9;[puid] char(42)  NULL, &#xA;&#x9;[ProjectUID] [uniqueidentifier]  NULL,&#xA;&#x9;[ppl_code] varchar(50) Null, &#xA;&#x9;[ProjectCount] [int] NOT NULL,&#xA;&#x9;[ProjectCount_Adjusted] [int] NOT NULL,&#xA;&#x9;[ProjectType] [int] NULL,&#xA;&#x9;[PMAssessment] [int] NULL,&#xA;&#x9;[PMAssessmentPrior] [int] NULL,&#xA;&#x9;[SnapshotID] [int]  NULL,&#xA;&#x9;[OverallScore] [decimal](16, 2) NULL,&#xA;&#x9;[OverallScore_Override] [decimal](16, 2) NULL,&#xA;&#xA;) ON [PRIMARY]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create ProjectSecurityTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{52d002cc-c6ae-4732-9936-7a3b86b947f1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create ProjectSecurityTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource=" USE [PerViewDataMart]&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[project_security]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [project_security]&#xA;END &#xA;&#xA;CREATE TABLE [dbo].[project_security](&#xA;&#xA;&#x9;[resuid] uniqueIdentifier null, &#xA;&#x9;[ResourceNTAccount] varchar(20) null,&#xA;&#x9;[puid] [char](42) NULL,&#xA;&#x9;[ProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[ppl_code] [varchar](50) NULL,&#xA;&#x9;[projectName] [varchar] (500) null&#xA;&#xA;) ON [PRIMARY]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create Risks Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{473C33D1-C0EF-46BB-938B-F7EAD5B31726}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create Risks Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="6">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="USE PerViewDataMart&#xA;GO&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_risks]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE dim_risks&#xA;END &#xA;&#xA;CREATE TABLE [dbo].dim_risks (&#xA;[puid] char(42) null, &#xA;[ruid] char(42) null, &#xA;[ppl_code] varchar(55), &#xA; [ProjectUID] [uniqueidentifier] null,&#xA; [RiskUniqueID] [uniqueidentifier] null,&#xA; [RiskID] [int] null,&#xA; [Title] varchar(100) NULL,&#xA; [Status] varchar(100) NULL,&#xA; [AssignedToResource] varchar(100) NULL,&#xA; [Owner] varchar(100) NULL,&#xA; [DueDate] [datetime] NULL,&#xA; [Probability] [float] NULL,&#xA; [Impact] [float] NULL,&#xA; [Exposure] [float] NULL,&#xA; [Cost] [float] NULL,&#xA; [CostExposure] [float] NULL,&#xA; [Category] varchar(100) NULL,&#xA; [Description] varchar(max) NULL,&#xA; [MitigationPlan] varchar(max) NULL,&#xA; [ContingencyPlan] varchar(max) NULL,&#xA; [TriggerTask] varchar(100) NULL,&#xA; [TriggerDescription] varchar(max) NULL,&#xA; [NumberOfAttachments] [int] NULL,&#xA; [CreateByResource] varchar(100) NULL,&#xA; [CreatedDate] [datetime] NULL,&#xA; [ModifiedByResource] varchar(100) NULL,&#xA; [ModifiedDate] [datetime] NULL,&#xA; [IsFolder] [bit] null,&#xA; [ItemRelativeUrlPath] [varchar](1024) NULL,&#xA; [AssignedToUserClaimsAccount] varchar(100) NULL,&#xA; [CreateByUserClaimsAccount] varchar(100) NULL,&#xA; [ModifiedByUserClaimsAccount] varchar(100) NULL &#xA; ) &#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create Task Summary Fact Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{23334453-ED35-4545-B748-34A8396FAC43}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create Task Summary Fact Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="7">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="USE [PerViewDataMart]&#xA;GO&#xA;&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[EpmTaskSummary]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [EpmTaskSummary]&#xA;END &#xA;&#xA;CREATE TABLE [dbo].[EpmTaskSummary](&#xA;&#x9;[puid] [char](42) NULL,&#xA;&#x9;[tuid] [char](42) NULL,&#xA;&#x9;[task_id] varchar(12) null,&#xA;&#x9;[ProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[ppl_code] [varchar](55) NULL,&#xA;&#x9;[TaskUID] [uniqueidentifier] NULL,&#xA;&#x9;[TaskIsSummary] [bit] NULL,&#xA;&#x9;[TaskIsMilestone] [bit] NULL,&#xA;&#x9;[TaskIsCritical] [bit] NULL,&#xA;&#x9;[TaskIsScheduledMilestone] [bit] NULL,&#xA;&#x9;[TaskIsCompletedMilestone] [bit] NULL,&#xA;&#x9;[TaskIsScheduledDeliverable] [bit] NULL,&#xA;&#x9;[TaskIsCompletedDeliverable] [bit] NULL,&#xA;&#x9;[TaskIsScheduledButIncomplete] [bit] NULL,&#xA;&#x9;[TaskIsScheduledToComplete] [bit] NULL,&#xA;&#x9;[SnapshotID] int NULL,&#xA;&#x9;[TaskIsBaselinedAndComplete] [bit] NULL,&#xA;&#x9;[TaskIsComplete] [bit] NULL,&#xA;&#x9;[TaskIsScheduled] [bit] NULL,&#xA;&#x9;[TaskIsOverDue] [bit] NULL,&#xA;&#x9;[TaskIsDeliverable] [bit] NULL,&#xA;&#x9;[TaskCount] int null&#xA;) ON [PRIMARY]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Populate Mapper Test Data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{85D93284-7CE7-4330-B2F5-75BACB8A8BE6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Populate Mapper Test Data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="8">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:SqlStatementSource="&#xA;&#xA;truncate table mapping&#xA;&#xA;insert into Mapping &#xA;&#xA;select 'A89B1ACD-9501-6AE6-B9C8-AABB07DA2010',&#x9;'153502'    union all                                              &#xA;select '17EB1019-B855-E611-80E4-0050568F1156',&#x9;'100001'      union all                                            &#xA;select 'DC16EBA0-E16E-E611-80E6-0050568F1156',&#x9;'106763'     union all                                            &#xA;select '649EE4A9-3580-E611-80E9-0050568F1156'&#x9;, '114565'     union all                                             &#xA;select '649EE4A9-3580-E611-80E9-0050568F1156',&#x9;'157192'     union all                                             &#xA;select '649EE4A9-3580-E611-80E9-0050568F1156'&#x9;, '32578' union all&#xA;select '649EE4A9-3580-E611-80E9-0050568F1156'&#x9;, '184303' union all&#xA;select '17EB1019-B855-E611-80E4-0050568F1156'&#x9;, '186682' union all&#xA;select '17EB1019-B855-E611-80E4-0050568F1156',&#x9;'198625' &#xA;&#xA; &#xA;--DECLARE @uuid VARCHAR(50)&#xA;--Declare @pplcode char(55) &#xA;&#xA;--SET @uuid = 'a89b1acd95016ae6b9c8aabb07da2010'&#xA;--set @pplcode = '153502'&#xA;&#xA;--insert into Mapping   &#xA;--SELECT  CAST(&#xA;  --      SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING--(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA;  --      SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING--(@uuid, 21, 12)&#xA;  --      AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;  --,@pplcode as ppl_code&#xA;&#xA;--SET @uuid = '17EB1019B855E61180E40050568F1156'&#xA;--set @pplcode = '100001'&#xA;&#xA;--insert into Mapping   &#xA;--SELECT  CAST(&#xA; --       SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING--(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA; --       SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING--(@uuid, 21, 12)&#xA;  --      AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;  --,@pplcode as ppl_code&#xA;&#xA;--SET @uuid = 'DC16EBA0E16EE61180E60050568F1156'&#xA;--set @pplcode = '106763'&#xA;&#xA;--insert into Mapping   &#xA;--SELECT  CAST(&#xA; --       SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING--(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA; ---       SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING---(@uuid, 21, 12)&#xA;  --      AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;  --,@pplcode as ppl_code&#xA;&#xA;&#xA;--SET @uuid = '649EE4A93580E61180E90050568F1156'&#xA;--set @pplcode = '114565'&#xA;&#xA;--insert into Mapping   &#xA;--SELECT  CAST(&#xA; --       SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING--(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA; --       SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING---(@uuid, 21, 12)&#xA;  --      AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;  --,@pplcode as ppl_code&#xA;&#xA;--SET @uuid = '649EE4A93580E61180E90050568F1156'&#xA;--set @pplcode = '157192'&#xA;--&#xA;--insert into Mapping   &#xA;--SELECT  CAST(&#xA; --       SUBSTRING(@uuid, 1, 8) + '-' + SUBSTRING--(@uuid, 9, 4) + '-' + SUBSTRING(@uuid, 13, 4) + '-' +&#xA; --       SUBSTRING(@uuid, 17, 4) + '-' + SUBSTRING--(@uuid, 21, 12)&#xA; --       AS UNIQUEIDENTIFIER) as ProjectUID   &#xA;  --,@pplcode as ppl_code&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="243,42"
+          Id="Package\SQL Create dim_assignment Table"
+          TopLeft="714,205" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\SQL Create dim_project Table"
+          TopLeft="48,205" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\SQL Create dim_task Table"
+          TopLeft="395,227" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\SQL Create Issues Table"
+          TopLeft="49,50" />
+        <NodeLayout
+          Size="270,48"
+          Id="Package\SQL Create Project Summary Fact Table"
+          TopLeft="323,86" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\SQL Create Risks Table"
+          TopLeft="66,123" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\SQL Create Task Summary Fact Table"
+          TopLeft="663,92" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\SQL Populate Mapper Test Data"
+          TopLeft="58,308" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\SQL Create ProjectSecurityTable"
+          TopLeft="427,295" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\SQL Create dim_resource table"
+          TopLeft="719,303" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
