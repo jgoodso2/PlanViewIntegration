@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="xrdcwpdbsmsp03.PerViewDataMart.reader"
+  DTS:DTSID="{4D49830A-B585-4B5B-9A31-70CF87817794}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;User ID=reader;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJmUwZ+5It0KYBjFfASMwJQAAAAACAAAAAAADZgAAwAAAABAAAABWSomfTEtsNPx4aRzIePwVAAAAAASAAACgAAAAEAAAAD32fAATuEZ9rNZmYriol1V4AAAAF0JqGm0Qb4/EKMGz9a5V2jiOrvIGdQ833dVD7Db8ItpUCb2wE/XVk42PfR4DQ/w/ks0d+uOuXSm1vuRTWzuuGVn0kbkPqCg1Ay6OknltLBaBeOtqDDzm2krJ/plExjGiQKQWhGC168CJOziys8dWJNMTWmJfMBNSFAAAAPy7LlZPEQpbA1AXKiEJaoDG5o9S</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

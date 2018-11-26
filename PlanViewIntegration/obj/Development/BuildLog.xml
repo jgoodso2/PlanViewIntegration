@@ -2,23 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>PlanViewIntegration</Name>
-    <LastWriteTime>2018-09-10T14:43:03.3451283Z</LastWriteTime>
+    <LastWriteTime>2018-11-13T13:59:39.4862573Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>InitializeDataMart.dtsx</Name>
-      <LastWriteTime>2018-09-03T20:10:47.4703828Z</LastWriteTime>
+      <LastWriteTime>2018-11-12T17:10:47.7126018Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadProjectStatus.dtsx</Name>
-      <LastWriteTime>2018-09-10T20:36:16.0308886Z</LastWriteTime>
+      <LastWriteTime>2018-11-13T04:18:10.069063Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadPlanViewRawData.dtsx</Name>
-      <LastWriteTime>2018-09-10T15:11:39.5197286Z</LastWriteTime>
+      <LastWriteTime>2018-10-23T17:44:40.4578503Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>temp.dtsx</Name>
-      <LastWriteTime>2018-08-09T22:13:24.6143562Z</LastWriteTime>
+      <LastWriteTime>2018-10-10T09:17:39.0257303Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -43,7 +43,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadProjectSecurity.dtsx</Name>
-      <LastWriteTime>2018-09-10T14:43:03.3201258Z</LastWriteTime>
+      <LastWriteTime>2018-10-17T15:12:13.2496155Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -53,7 +53,47 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadMappedPlanViewProjects.dtsx</Name>
-      <LastWriteTime>2018-09-10T16:20:11.5704584Z</LastWriteTime>
+      <LastWriteTime>2018-11-13T00:40:41.9487569Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulateDimTask.dtsx</Name>
+      <LastWriteTime>2018-10-09T14:50:02.9108285Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulateDimProject.dtsx</Name>
+      <LastWriteTime>2018-11-13T15:45:10.3869464Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulateDimAssignment.dtsx</Name>
+      <LastWriteTime>2018-10-09T14:50:02.9108285Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulateFactProjectSummary.dtsx</Name>
+      <LastWriteTime>2018-10-12T19:06:29.6570336Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulateFactTaskSummary.dtsx</Name>
+      <LastWriteTime>2018-10-09T14:50:02.8640285Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulatePlanView_Issues_Risks.dtsx</Name>
+      <LastWriteTime>2018-10-26T19:31:34.7997579Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>SnapshotTimesheetData.dtsx</Name>
+      <LastWriteTime>2018-11-01T21:25:14.0842409Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PopulateTimesheetData.dtsx</Name>
+      <LastWriteTime>2018-10-30T14:42:46.5616692Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

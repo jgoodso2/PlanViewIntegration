@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/30/2018 8:24:03 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PARAIXI8265P"
+  DTS:CreatorName="HCA\IXI8265"
+  DTS:DTSID="{A34F3EC0-429E-4829-A711-2322747A5705}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SnapshotTimesheetData"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{75FFD03D-0441-48B1-9751-99FEBF2764C7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3364A6A2-99BE-49F9-BC08-77BEC89D5E68}"
+      DTS:ObjectName="xrdcwpdbsmsp03.PerViewDataMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SQL Drop and recreate all source tables for Timesheet"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A6492DF7-9A34-4353-B9DD-322805B58677}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Drop and recreate all source tables for Timesheet"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3364A6A2-99BE-49F9-BC08-77BEC89D5E68}"
+          SQLTask:SqlStatementSource="&#xA;--create the tables needed to create the timesheet views and such&#xA;-- first create the AssByDay view prerequts&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_EpmAssignmentByDay]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [MSP_EpmAssignmentByDay]&#xA;END  &#xA;select  * into dbo.[MSP_EpmAssignmentByDay]    -- &#xA;from  &#xA; [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.[MSP_EpmAssignmentByDay]  ass&#xA;--truncate table [MSP_EpmAssignmentByDay]&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_EpmAssignmentBaseline]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_EpmAssignmentBaseline&#xA;END  &#xA;select  * into dbo.MSP_EpmAssignmentBaseline&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_EpmAssignmentBaseline&#xA;--delete from MSP_EpmAssignmentBaseline&#xA;&#xA;&#xA;&#xA;-- create resourceByDAy&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_EpmResourceByDay_UserView]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [MSP_EpmResourceByDay_UserView]&#xA;END  &#xA;select   * into dbo.[MSP_EpmResourceByDay_UserView] &#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.[MSP_EpmResourceByDay_UserView] &#xA;--delete from [MSP_EpmResourceByDay_UserView]&#xA;&#xA;-- create MSP_TimeByDay_OlapView  &#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimeByDay_OlapView]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimeByDay_OlapView&#xA;END  &#xA;select  * into dbo.MSP_TimeByDay_OlapView &#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimeByDay_OlapView &#xA;----delete from MSP_TimeByDay_OlapView&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_EpmAssignmentBaselineByDay]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_EpmAssignmentBaselineByDay&#xA;END  &#xA;select   * into dbo.MSP_EpmAssignmentBaselineByDay&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_EpmAssignmentBaselineByDay&#xA;--delete from MSP_EpmAssignmentBaselineByDay&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_EpmAssignment]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [MSP_EpmAssignment]&#xA;END  &#xA;select   * into dbo.[MSP_EpmAssignment]&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.[MSP_EpmAssignment] &#xA;--delete from [MSP_EpmAssignment]&#xA;&#xA;--select * into dbo.[MSP_EpmProject]&#xA;--from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.[MSP_EpmProject] &#xA;----delete from [MSP_EpmProject]&#xA;&#xA;&#xA;&#xA;-- create timesheetPeriod olapview&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetPeriod]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetPeriod&#xA;END  &#xA;&#xA;select  * into dbo.MSP_TimesheetPeriod&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimesheetPeriod &#xA;----delete from MSP_TimesheetPeriod &#xA;&#xA;&#xA;&#xA;-- next create timesheet_OlapView prereqs &#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_Timesheet]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_Timesheet&#xA;END  &#xA;select   * into dbo.MSP_Timesheet&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_Timesheet &#xA;--delete from MSP_Timesheet &#xA;&#xA;&#xA;-- next create timesheetLine&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetLine]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetLine&#xA;END  &#xA;select   * into dbo.MSP_TimesheetLine&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimesheetLine&#xA;--delete from MSP_TimesheetLine&#xA;&#xA;&#xA;&#xA;-- next create MSP_TimesheetActual_OlapView &#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetActual]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetActual&#xA;END  &#xA;select   * into dbo.MSP_TimesheetActual&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimesheetActual&#xA;--delete from MSP_TimesheetActual&#xA;&#xA;&#xA;-- now create dbo.MSP_TimesheetProject view&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetProject]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetProject&#xA;END  &#xA;select   * into dbo.MSP_TimesheetProject&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimesheetProject&#xA;--delete from MSP_TimesheetProject&#xA;--&#xA;&#xA;&#xA;-- next create MSP_TimesheetTask_OlapView&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetTask]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetTask&#xA;END  &#xA;select   * into dbo.MSP_TimesheetTask&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimesheetTask&#xA;--delete from MSP_TimesheetTask&#xA;&#xA;&#xA;--next create MSP_TimesheetResource  &#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetResource]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetResource&#xA;END  &#xA;&#xA;select   * into dbo.MSP_TimesheetResource&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.MSP_TimesheetResource&#xA;--delete from MSP_TimesheetResource&#xA;&#xA;&#xA;-- create MSP_TimesheetLine_UserViewCF (from projectwebapp) &#xA;-- note this started as a view with a bunch of tables - will keep it a view for simplicity&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TimesheetLine_UserViewCF]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE MSP_TimesheetLine_UserViewCF&#xA;END  &#xA;select   * into dbo.[MSP_TimesheetLine_UserViewCF]&#xA;from [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.dbo.[MSP_TimesheetLine_UserViewCF]  &#xA;--delete from [MSP_TimesheetLine_UserViewCF] &#xA;&#xA;-- next create dim_resources SCD  --- DO THIS Elsewhere&#xA;-- check population of resourceAudit table&#xA;&#xA;-- timesheet actions&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]&#xA;END  &#xA;select * into dbo.[MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]&#xA;from  &#xA; [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.draft.[MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]  &#xA;&#xA;--truncate table [MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW] &#xA;--delete from [MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]  where TS_Action_date &gt; '2018-07-02' &#xA;;&#xA;-- Gettting Deltas for processed timesheets&#xA;with timesheetsToProcess as &#xA;( &#xA;SELECT  *&#xA;FROM  [XRPSWQDBSSPP01.HCAQA.CORPADQA.NET].ProjectWebApp.draft.[MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]  a&#xA;WHERE a.TS_Action_date &gt; DateAdd(year,-1,getDate()) &#xA;) &#xA;insert into dbo.[MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]&#xA;select *&#xA;&#xA;    FROM timesheetsToProcess &#xA;    WHERE  Not exists (select * from dbo.[MSP_TIMESHEET_ACTIONS_PUBLISHED_VIEW]  b&#xA;&#x9;where timesheetsToProcess.TS_Action_UID = b.TS_Action_UID )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="336,42"
+          Id="Package\SQL Drop and recreate all source tables for Timesheet"
+          TopLeft="85,61" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp.reader"
+  DTS:DTSID="{88E18143-CDEA-4D4E-B4A6-DCDB1B2814E6}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=xrpswqdbsspp01.hcaqa.corpadqa.net;User ID=reader;Initial Catalog=ProjectWebApp;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJmUwZ+5It0KYBjFfASMwJQAAAAACAAAAAAADZgAAwAAAABAAAABpiGPn6c1JPGotBS1ORTM9AAAAAASAAACgAAAAEAAAAD5ynqWCaOYDFBB+jU4cgb14AAAA4KQ+KFzagWyVRmLGaNVZevJmt26yiB5mLRTWHwpatu4ezBQ8gzjNvYtiPvzPFNg31auzj1AzxHosK04OURtZkCTjou4jlaOFvCBLjZ6D/l8sMvrGwQpNK44jIUk5T5e7tlC6wTNp2bpFwLb4A7wHKKWDSdXu8nn0FAAAANdCnpfXmthpMa54y5vrUvQugZ3J</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

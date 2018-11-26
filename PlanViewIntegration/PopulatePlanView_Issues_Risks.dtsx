@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/26/2018 2:08:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PARAIXI8265P"
+  DTS:CreatorName="HCA\IXI8265"
+  DTS:DTSID="{2F6AB780-4398-4286-9DC0-A81F1249268C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="PopulatePlanView_Issues_Risks"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{9F8ED8D6-4DD4-4E8A-8A6A-2BD46139010E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.hca.corpad.net.PerViewDataMart.reader]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4597EB8F-C907-4B7D-A6A7-884D8158486C}"
+      DTS:ObjectName="xrdcwpdbsmsp03.hca.corpad.net.PerViewDataMart.reader">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03.hca.corpad.net;User ID=reader;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD5T8/QUOyRwfF57Xazo95yAAAAAASAAACgAAAAEAAAAI+hQIHGuM8nXFbRfbiEwZoQAAAAqg+WSVTgrX2f19LdNR4pshQAAACU1hXYIoqG3jdtCGxxGR5rdV97ew</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{76ADB61C-565E-450E-9FB7-0D20D82DE518}"
+      DTS:ObjectName="xrdcwpdbsmsp03.HCAPROD_Copy">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=HCAPROD_Copy;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1C68DF7F-09E6-4422-A2DC-4F5469D6D215}"
+      DTS:ObjectName="xrdcwpdbsmsp03.PerViewDataMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT Populate Planview Issues"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{645b8c06-ed3c-4739-bac4-d4e736b76a56}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Populate Planview Issues"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE Get PlanView Issues"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[bpg_issues]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                      length="42"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[puid]"
+                      name="puid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[ppl_code]"
+                      length="12"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[ppl_code]"
+                      name="ppl_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[title]"
+                      length="100"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[cri_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[cri_code]"
+                      length="100"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[cri_code]"
+                      name="cri_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[assignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[assignedToResource]"
+                      length="100"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[assignedToResource]"
+                      name="assignedToResource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[discussion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[discussion]"
+                      length="1000"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[discussion]"
+                      name="discussion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[resp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[resp_email]"
+                      length="50"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[resp_email]"
+                      name="resp_email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[count]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[count]"
+                      name="count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[iuid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[iuid]"
+                      length="42"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[iuid]"
+                      name="iuid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[cri_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="cri_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[assignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="assignedToResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[discussion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="discussion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[resp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="resp_email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[count]"
+                      dataType="i4"
+                      name="count" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].ExternalColumns[iuid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="iuid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[puid]"
+                      name="puid" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[iuid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[iuid]"
+                      name="iuid" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
+                      name="ppl_code" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[title]"
+                      name="title" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[cri_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[cri_code]"
+                      name="cri_code" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[assignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[assignedToResource]"
+                      name="assignedToResource" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[discussion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[discussion]"
+                      name="discussion" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[resp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[resp_email]"
+                      name="resp_email" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[count]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[count]"
+                      name="count" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE Populate PlanView Issues"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_issues]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[puid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="42"
+                      cachedName="puid"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[puid]" />
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[ppl_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="ppl_code"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[ppl_code]" />
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[title]" />
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[assignedToResource]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="assignedToResource"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[assignedToResource]" />
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[discussion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="discussion"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Discussion]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[discussion]" />
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[iuid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="42"
+                      cachedName="iuid"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[iuid]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[iuid]" />
+                    <inputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].Columns[count]"
+                      cachedDataType="i4"
+                      cachedName="count"
+                      externalMetadataColumnId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[issueCount]"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output].Columns[count]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                      dataType="guid"
+                      name="ProjectUID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueUniqueID]"
+                      dataType="guid"
+                      name="IssueUniqueID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[IssueID]"
+                      dataType="i4"
+                      name="IssueID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AssignedToResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfAttachments]"
+                      dataType="i4"
+                      name="NumberOfAttachments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                      dataType="dbTimeStamp"
+                      name="DueDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Priority" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Discussion]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Discussion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[Resolution]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Resolution" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CreateByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ModifiedByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[IsFolder]"
+                      dataType="bool"
+                      name="IsFolder" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ItemRelativeUrlPath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1024"
+                      name="ItemRelativeUrlPath" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToUserClaimsAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AssignedToUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[CreateByUserClaimsAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CreateByUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByUserClaimsAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ModifiedByUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[issueCount]"
+                      dataType="i4"
+                      name="issueCount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input].ExternalColumns[iuid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="iuid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Populate Planview Issues.Paths[OLE DB Source Output]"
+              endId="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Populate Planview Issues\OLE Get PlanView Issues.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT Populate PlanView Risks"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{09827ba3-f83c-4c72-8435-ceb3fff9156b}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Populate PlanView Risks"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE Get PlanView Risks"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[bpg_risks]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                      length="42"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[puid]"
+                      name="puid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[ppl_code]"
+                      length="12"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[ppl_code]"
+                      name="ppl_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[title]"
+                      length="100"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[cri_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[cri_code]"
+                      length="100"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[cri_code]"
+                      name="cri_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[assignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[assignedToResource]"
+                      length="100"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[assignedToResource]"
+                      name="assignedToResource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[discussion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[discussion]"
+                      length="1000"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[discussion]"
+                      name="discussion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[resp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[resp_email]"
+                      length="50"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[resp_email]"
+                      name="resp_email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[count]"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[count]"
+                      name="count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[ruid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[ruid]"
+                      length="42"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[ruid]"
+                      name="ruid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[cri_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="cri_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[assignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="assignedToResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[discussion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="discussion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[resp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="resp_email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[count]"
+                      dataType="i4"
+                      name="count" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].ExternalColumns[ruid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="ruid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[puid]"
+                      name="puid" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ruid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ruid]"
+                      name="ruid" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
+                      name="ppl_code" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[title]"
+                      name="title" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[cri_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[cri_code]"
+                      name="cri_code" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[assignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[assignedToResource]"
+                      name="assignedToResource" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[discussion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[discussion]"
+                      name="discussion" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[resp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[resp_email]"
+                      name="resp_email" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[count]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[count]"
+                      name="count" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE Populate PlanView Risks"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_risks]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].Columns[puid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="42"
+                      cachedName="puid"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[puid]" />
+                    <inputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].Columns[ppl_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="ppl_code"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[ppl_code]" />
+                    <inputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[title]" />
+                    <inputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].Columns[assignedToResource]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="assignedToResource"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[assignedToResource]" />
+                    <inputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].Columns[ruid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="42"
+                      cachedName="ruid"
+                      externalMetadataColumnId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ruid]"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output].Columns[ruid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[puid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="puid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ppl_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      name="ppl_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ProjectUID]"
+                      dataType="guid"
+                      name="ProjectUID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[RiskUniqueID]"
+                      dataType="guid"
+                      name="RiskUniqueID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[RiskID]"
+                      dataType="i4"
+                      name="RiskID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AssignedToResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Owner]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[DueDate]"
+                      dataType="dbTimeStamp"
+                      name="DueDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Probability]"
+                      dataType="r8"
+                      name="Probability" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Impact]"
+                      dataType="r8"
+                      name="Impact" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Exposure]"
+                      dataType="r8"
+                      name="Exposure" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Cost]"
+                      dataType="r8"
+                      name="Cost" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[CostExposure]"
+                      dataType="r8"
+                      name="CostExposure" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[MitigationPlan]"
+                      codePage="1252"
+                      dataType="text"
+                      name="MitigationPlan" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ContingencyPlan]"
+                      codePage="1252"
+                      dataType="text"
+                      name="ContingencyPlan" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[TriggerTask]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TriggerTask" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[TriggerDescription]"
+                      codePage="1252"
+                      dataType="text"
+                      name="TriggerDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfAttachments]"
+                      dataType="i4"
+                      name="NumberOfAttachments" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[CreateByResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CreateByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByResource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ModifiedByResource" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[IsFolder]"
+                      dataType="bool"
+                      name="IsFolder" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ItemRelativeUrlPath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1024"
+                      name="ItemRelativeUrlPath" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[AssignedToUserClaimsAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AssignedToUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[CreateByUserClaimsAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CreateByUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedByUserClaimsAccount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ModifiedByUserClaimsAccount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input].ExternalColumns[ruid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="42"
+                      name="ruid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Populate PlanView Risks.Paths[OLE DB Source Output]"
+              endId="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Delete All PlanView Risks and Issues before weekly Load"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6C59D432-AC26-4699-B944-BBEB8BED2CA1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Delete All PlanView Risks and Issues before weekly Load"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4597EB8F-C907-4B7D-A6A7-884D8158486C}"
+          SQLTask:SqlStatementSource="delete from &#xA;   [PerViewDataMart].[dbo].[dim_risks] &#xA;  where ppl_code is not null&#xA;  ;&#xA;  delete from &#xA;   [PerViewDataMart].[dbo].[dim_issues] &#xA;  where ppl_code is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{046720D0-8B83-4753-95D9-0C0602E40D91}"
+      DTS:From="Package\SQL Delete All PlanView Risks and Issues before weekly Load"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT Populate Planview Issues" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{CF1E7BA3-CDA3-4573-BA39-33EB5BC7A6D0}"
+      DTS:From="Package\SQL Delete All PlanView Risks and Issues before weekly Load"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DFT Populate PlanView Risks" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="222,42"
+          Id="Package\DFT Populate Planview Issues"
+          TopLeft="93,169" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\DFT Populate PlanView Risks"
+          TopLeft="403,170" />
+        <NodeLayout
+          Size="369,42"
+          Id="Package\SQL Delete All PlanView Risks and Issues before weekly Load"
+          TopLeft="193,50" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="317.333333333333,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-113.333333333333,77"
+              Start="0,0"
+              End="-113.333333333333,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.9994603345925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.9994603345925"
+                    Point2="0,30.9994603345925"
+                    Point3="-4,30.9994603345925" />
+                  <mssgle:LineSegment
+                    End="-109.333333333333,30.9994603345925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.333333333333,30.9994603345925"
+                    Point2="-113.333333333333,30.9994603345925"
+                    Point3="-113.333333333333,34.9994603345925" />
+                  <mssgle:LineSegment
+                    End="-113.333333333333,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="437.666666666667,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="73.8333333333334,78"
+              Start="0,0"
+              End="73.8333333333334,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.4020507285483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.4020507285483"
+                    Point2="0,31.4020507285483"
+                    Point3="4,31.4020507285483" />
+                  <mssgle:LineSegment
+                    End="69.8333333333334,31.4020507285483" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.8333333333334,31.4020507285483"
+                    Point2="73.8333333333334,31.4020507285483"
+                    Point3="73.8333333333334,35.4020507285483" />
+                  <mssgle:LineSegment
+                    End="73.8333333333334,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Populate Planview Issues">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="198,42"
+          Id="Package\DFT Populate Planview Issues\OLE Get PlanView Issues"
+          TopLeft="186,71" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues"
+          TopLeft="172,252" />
+        <EdgeLayout
+          Id="Package\DFT Populate Planview Issues.Paths[OLE DB Source Output]"
+          TopLeft="284.25,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,139"
+              Start="0,0"
+              End="0,131.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,131.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Populate Planview Issues\OLE Get PlanView Issues">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT Populate PlanView Risks">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\DFT Populate PlanView Risks\OLE Get PlanView Risks"
+          TopLeft="160,41" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks"
+          TopLeft="235,224" />
+        <EdgeLayout
+          Id="Package\DFT Populate PlanView Risks.Paths[OLE DB Source Output]"
+          TopLeft="256,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="87.5,141"
+              Start="0,0"
+              End="87.5,133.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66.5"
+                    Point2="0,70.5"
+                    Point3="4,70.5" />
+                  <mssgle:LineSegment
+                    End="83.5,70.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.5,70.5"
+                    Point2="87.5,70.5"
+                    Point3="87.5,74.5" />
+                  <mssgle:LineSegment
+                    End="87.5,133.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

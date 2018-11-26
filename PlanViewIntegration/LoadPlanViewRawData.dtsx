@@ -11,10 +11,22 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadPlanViewRawData"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{A6C27731-7A5C-44CE-8A3F-C4E617E74B59}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{58753FA9-3089-4161-AA8C-DE632C422DA6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E575FB00-BDD3-4239-B82D-8F260AC45E64}"
+      DTS:ObjectName="xrdcwpdbsmsp03.HCAPROD_Copy">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=HCAPROD_Copy;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -90,8 +102,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST cri copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -505,8 +517,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST cri_assoc copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -660,8 +672,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST epm_strat_work copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -829,8 +841,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1628,8 +1640,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST issue copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1797,8 +1809,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST long_text copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2048,8 +2060,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST planning_entity copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4661,8 +4673,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST PlanView Baseline Copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4996,8 +5008,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST project_tree copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5137,8 +5149,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST risk copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5344,8 +5356,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST structure copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5575,8 +5587,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST structure_tree copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5716,8 +5728,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST st_planning_entity copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6451,8 +6463,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST wf_team copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6634,8 +6646,8 @@
               <connections>
                 <connection
                   refId="Package\DFT Load PlanView Tables\OLE DST workflow copy.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -17671,6 +17683,7 @@
       DTS:refId="Package\Rebuild Planview Primary Keys and Indexes"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C3DA5192-334D-4E44-A201-1A37C20D9F05}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -17697,7 +17710,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{1D394D16-EE13-4191-9506-61ACCBD1394F}"
+          SQLTask:Connection="{E575FB00-BDD3-4239-B82D-8F260AC45E64}"
           SQLTask:SqlStatementSource="truncate table [ip].[baseline]&#xA;truncate table [ip].[cri]&#xA;truncate table [ip].[cri_assoc]&#xA;truncate table [ip].[epm_strat_work]&#xA;truncate table [ip].[ip_user]&#xA;truncate table [ip].[issue]&#xA;truncate table [ip].[long_text]&#xA;truncate table [ip].[planning_entity] &#xA;truncate table [ip].[project_tree]&#xA;truncate table [ip].[risk]&#xA;truncate table [ip].[st_planning_entity]&#xA;truncate table [ip].[structure]&#xA;truncate table [ip].[structure_tree]&#xA;truncate table [ip].[wf_team]&#xA;truncate table [ip].[workflow]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -17813,13 +17826,9 @@
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView project_tree"
           TopLeft="598,207" />
         <NodeLayout
-          Size="238,42"
-          Id="Package\DFT Load PlanView Tables\OLE DST st_planning_entity copy"
-          TopLeft="24,491" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\DFT Load PlanView Tables\OLE DST cri_assoc copy"
-          TopLeft="814,669" />
+          Size="205,42"
+          Id="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user"
+          TopLeft="573,21" />
         <NodeLayout
           Size="168,42"
           Id="Package\DFT Load PlanView Tables\OLE DST risk copy"
@@ -17829,9 +17838,25 @@
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text"
           TopLeft="24,210" />
         <NodeLayout
+          Size="175,42"
+          Id="Package\DFT Load PlanView Tables\OLE DST issue copy"
+          TopLeft="48,842" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DFT Load PlanView Tables\OLE DST cri_assoc copy"
+          TopLeft="814,669" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\DFT Load PlanView Tables\OLE DST st_planning_entity copy"
+          TopLeft="24,491" />
+        <NodeLayout
           Size="237,42"
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView structure_tree"
           TopLeft="600,390" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\DFT Load PlanView Tables\OLE SRC PlanView epm_strat_work"
+          TopLeft="297,20" />
         <NodeLayout
           Size="194,42"
           Id="Package\DFT Load PlanView Tables\OLE DST workflow copy"
@@ -17848,14 +17873,6 @@
           Size="224,42"
           Id="Package\DFT Load PlanView Tables\OLE DST planning_entity copy"
           TopLeft="312,302" />
-        <NodeLayout
-          Size="247,42"
-          Id="Package\DFT Load PlanView Tables\OLE SRC PlanView epm_strat_work"
-          TopLeft="297,20" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT Load PlanView Tables\OLE SRC issue table"
-          TopLeft="38,741" />
         <NodeLayout
           Size="210,42"
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView Baseline"
@@ -17881,10 +17898,6 @@
           Id="Package\DFT Load PlanView Tables\OLE DST wf_team copy"
           TopLeft="21,660" />
         <NodeLayout
-          Size="175,42"
-          Id="Package\DFT Load PlanView Tables\OLE DST issue copy"
-          TopLeft="48,842" />
-        <NodeLayout
           Size="209,42"
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView cri table"
           TopLeft="570,575" />
@@ -17901,9 +17914,9 @@
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView structure"
           TopLeft="320,391" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user"
-          TopLeft="573,21" />
+          Size="175,42"
+          Id="Package\DFT Load PlanView Tables\OLE SRC issue table"
+          TopLeft="38,741" />
         <NodeLayout
           Size="227,42"
           Id="Package\DFT Load PlanView Tables\OLE DST epm_strat_work copy"
@@ -18410,7 +18423,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Load PlanView Tables\OLE DST st_planning_entity copy">
+    design-time-name="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PlanView Tables\OLE DST risk copy">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -18436,7 +18462,59 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PlanView Tables\OLE DST issue copy">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PlanView Tables\OLE DST cri_assoc copy">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PlanView Tables\OLE DST st_planning_entity copy">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DFT Load PlanView Tables\OLE SRC PlanView structure_tree">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load PlanView Tables\OLE SRC PlanView epm_strat_work">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -18489,19 +18567,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT Load PlanView Tables\OLE DST planning_entity copy">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Load PlanView Tables\OLE SRC PlanView epm_strat_work">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -18605,7 +18670,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user">
+    design-time-name="Package\DFT Load PlanView Tables\OLE DST epm_strat_work copy">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -18618,7 +18683,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Load PlanView Tables\OLE DST epm_strat_work copy">
+    design-time-name="Package\DFT Load PlanView Tables\OLE DST cri copy">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,10 +11,27 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadProjectSecurity"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{8E637E87-371B-43BC-8858-823ADF3A406F}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{CEC5CAB4-1B77-4629-B509-F004A4EDD5E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp.reader]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8A710F4D-69E6-43F4-8D59-DC8A5485F97F}"
+      DTS:ObjectName="xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp.reader">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrpswqdbsspp01.hcaqa.corpadqa.net;User ID=reader;Initial Catalog=ProjectWebApp;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAARiUPomgHzCLslxiaabYybAAAAAASAAACgAAAAEAAAAGWqeDr4a/GomIF4Hn1b9RsQAAAAEU9f8BX3ddIXO/294EERchQAAAAM7cyHbCJfH3/mfcslAyEcjS9h4w</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -90,8 +107,8 @@
               <connections>
                 <connection
                   refId="Package\DFT populate project_security table\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{8303E996-85B4-4329-B6E3-6153BD3A0232}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  connectionManagerID="{8303E996-85B4-4329-B6E3-6153BD3A0232}:invalid"
+                  connectionManagerRefId="{8303E996-85B4-4329-B6E3-6153BD3A0232}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -326,7 +343,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:Connection="{4D49830A-B585-4B5B-9A31-70CF87817794}"
           SQLTask:SqlStatementSource="truncate TABLE [project_security]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -402,49 +419,49 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="249,42"
           Id="Package\DFT populate project_security table"
-          TopLeft="225,242" />
+          TopLeft="180,172" />
         <NodeLayout
           Size="247,42"
           Id="Package\SQL truncate project_security table"
-          TopLeft="216,154" />
+          TopLeft="217,73" />
         <NodeLayout
           Size="152,42"
           Id="Package\SQL Update 34"
-          TopLeft="272,438" />
+          TopLeft="254,441" />
         <NodeLayout
           Size="200,42"
           Id="Package\SQL Update projectName"
-          TopLeft="233,353" />
+          TopLeft="237,334" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="339.5,196">
+          TopLeft="340.5,115">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="10,46"
+              StartConnector="{assembly:Null}"
+              EndConnector="-36,57"
               Start="0,0"
-              End="10,38.5">
+              End="-36,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19" />
+                    End="0,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="4,23" />
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
                   <mssgle:LineSegment
-                    End="6,23" />
+                    End="-32,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="6,23"
-                    Point2="10,23"
-                    Point3="10,27" />
+                    Point1="-32,28.5"
+                    Point2="-36,28.5"
+                    Point3="-36,32.5" />
                   <mssgle:LineSegment
-                    End="10,38.5" />
+                    End="-36,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -455,30 +472,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="349.5,284">
+          TopLeft="304.5,214">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-16.5,69"
+              StartConnector="{assembly:Null}"
+              EndConnector="32.5,120"
               Start="0,0"
-              End="-16.5,61.5">
+              End="32.5,112.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,56" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="-4,34.5" />
+                    Point1="0,56"
+                    Point2="0,60"
+                    Point3="4,60" />
                   <mssgle:LineSegment
-                    End="-12.5,34.5" />
+                    End="28.5,60" />
                   <mssgle:CubicBezierSegment
-                    Point1="-12.5,34.5"
-                    Point2="-16.5,34.5"
-                    Point3="-16.5,38.5" />
+                    Point1="28.5,60"
+                    Point2="32.5,60"
+                    Point3="32.5,64" />
                   <mssgle:LineSegment
-                    End="-16.5,61.5" />
+                    End="32.5,112.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -489,30 +506,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="333,395">
+          TopLeft="333.5,376">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="15,43"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
               Start="0,0"
-              End="15,35.5">
+              End="0,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
-                  <mssgle:LineSegment
-                    End="11,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11,21.5"
-                    Point2="15,21.5"
-                    Point3="15,25.5" />
-                  <mssgle:LineSegment
-                    End="15,35.5" />
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -528,7 +533,7 @@
     design-time-name="Package\DFT populate project_security table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="119,42"
           Id="Package\DFT populate project_security table\OLE Get"
@@ -542,7 +547,7 @@
           TopLeft="283.5,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="16,63"
               Start="0,0"
               End="16,55.5">

@@ -11,11 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadMappedPlanViewProjects"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{676BBC7B-27E7-4A2D-9BFC-863A4BCE9CA6}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{740698E8-F149-44CC-A2BE-9E0DEA7B67DE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9700AA01-D292-4FC3-98EA-802BF662DF01}"
+      DTS:ObjectName="xrdcwpdbsmsp03.HCAPROD_Copy">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=HCAPROD_Copy;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB]"
       DTS:CreationName="OLEDB"
@@ -24,6 +34,26 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=mapperDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{18DCEA97-2A08-4C99-A848-6032A26491B2}"
+      DTS:ObjectName="xrdcwpdbsmsp03.mapperDB 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=mapperDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB_test]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{550BEAAB-D54E-401F-B868-C51265A945C5}"
+      DTS:ObjectName="xrdcwpdbsmsp03.mapperDB_test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=mapperDB_test;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -69,8 +99,13 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
-cast ( p.ppl_code as varchar(10) ) as ppl_code
+cast( p.[Project ID] as varchar(10)) as PlanViewID
+, cast (p.[proj_mgr] as varchar(55)) as 'Proj_Mgr'
+,cast ( p.ppl_code as varchar(10) ) as ppl_code
+, cast ( p.[ProjectSponsor] as varchar(55) ) as  [Proj_Sponsor]
 ,cast( p.project_name as varchar(255) ) as ProjectName
+, cast (SUBSTRING ( p.perview_pm, charindex('(', p.perview_pm, 1) +1, 7)   as varchar(10) ) as alt_pm
+
  from dim_mapped_projects p</property>
                 <property
                   dataType="System.String"
@@ -97,8 +132,8 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
               <connections>
                 <connection
                   refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Connections[OleDbConnection]"
-                  connectionManagerID="{1D394D16-EE13-4191-9506-61ACCBD1394F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -129,6 +164,50 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
                       lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[ProjectName]"
                       name="ProjectName"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[PlanViewID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[PlanViewID]"
+                      length="10"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[PlanViewID]"
+                      name="PlanViewID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[Proj_Mgr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[Proj_Mgr]"
+                      length="55"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[Proj_Mgr]"
+                      name="Proj_Mgr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[Proj_Sponsor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[Proj_Sponsor]"
+                      length="55"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[Proj_Sponsor]"
+                      name="Proj_Sponsor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[alt_pm]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[alt_pm]"
+                      length="10"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[alt_pm]"
+                      name="alt_pm"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -144,6 +223,30 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
                       dataType="str"
                       length="255"
                       name="ProjectName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[PlanViewID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PlanViewID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[Proj_Mgr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      name="Proj_Mgr" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[Proj_Sponsor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      name="Proj_Sponsor" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].ExternalColumns[alt_pm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="alt_pm" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -152,6 +255,20 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[PlanViewID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[PlanViewID]"
+                      name="PlanViewID" />
+                    <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[Proj_Mgr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[Proj_Mgr]"
+                      name="Proj_Mgr" />
+                    <outputColumn
                       refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
                       codePage="1252"
                       dataType="str"
@@ -159,12 +276,26 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
                       lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[ppl_code]"
                       name="ppl_code" />
                     <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[Proj_Sponsor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[Proj_Sponsor]"
+                      name="Proj_Sponsor" />
+                    <outputColumn
                       refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[ProjectName]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[ProjectName]"
                       name="ProjectName" />
+                    <outputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[alt_pm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[alt_pm]"
+                      name="alt_pm" />
                     <outputColumn
                       refId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -183,11 +314,11 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
               </outputs>
             </component>
             <component
-              refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects"
+              refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE Load Mapped Projects"
+              name="OLE Populate Authorized Projects Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -240,76 +371,132 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB]"
+                  refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB_test]"
+                  connectionManagerRefId="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB_test]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input]"
+                  refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].Columns[ppl_code]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].Columns[ppl_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="55"
                       cachedName="ppl_code"
-                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].ExternalColumns[ppl_Code]"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[ppl_Code]"
                       lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[ppl_code]" />
                     <inputColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].Columns[ProjectName]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].Columns[Proj_Mgr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="55"
+                      cachedName="Proj_Mgr"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[proj_mgr]"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[Proj_Mgr]" />
+                    <inputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].Columns[alt_pm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="alt_pm"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[alt_pm]"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[alt_pm]" />
+                    <inputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].Columns[ProjectName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="ProjectName"
-                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                       lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[ProjectName]" />
+                    <inputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].Columns[PlanViewID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PlanViewID"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[plan_id]"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[PlanViewID]" />
+                    <inputColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].Columns[Proj_Sponsor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="55"
+                      cachedName="Proj_Sponsor"
+                      externalMetadataColumnId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[projectsponsor]"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output].Columns[Proj_Sponsor]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[ppl_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="55"
+                      name="ppl_Code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="Name" />
                     <externalMetadataColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input].ExternalColumns[ppl_Code]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[plan_id]"
                       codePage="1252"
                       dataType="str"
                       length="10"
-                      name="ppl_Code" />
+                      name="plan_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[proj_mgr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="proj_mgr" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[projectsponsor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="projectsponsor" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input].ExternalColumns[alt_pm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="alt_pm" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -321,14 +508,41 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
           <paths>
             <path
               refId="Package\DFT Load Authorized PlanView projects.Paths[OLE DB Source Output]"
-              endId="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\DFT Load Authorized PlanView projects\OLE get mapped projects.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Truncate Auth Projects Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{64CBFEA0-F622-46A6-A224-773D3624C187}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Truncate Auth Projects Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{550BEAAB-D54E-401F-B868-C51265A945C5}"
+          SQLTask:SqlStatementSource="truncate table [AuthorizedPlanViewProjects]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F141F7E2-865C-40DB-AD99-3B2F2B98F72E}"
+      DTS:From="Package\SQL Truncate Auth Projects Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT Load Authorized PlanView projects" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -340,11 +554,37 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="266,42"
           Id="Package\DFT Load Authorized PlanView projects"
-          TopLeft="181,57" />
+          TopLeft="211,213" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\SQL Truncate Auth Projects Table"
+          TopLeft="230,75" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="347,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96"
+              Start="0,0"
+              End="0,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -354,39 +594,39 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="207,42"
-          Id="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects"
-          TopLeft="320,202" />
-        <NodeLayout
           Size="200,42"
           Id="Package\DFT Load Authorized PlanView projects\OLE get mapped projects"
-          TopLeft="304,81" />
+          TopLeft="133,53" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table"
+          TopLeft="119,194" />
         <EdgeLayout
           Id="Package\DFT Load Authorized PlanView projects.Paths[OLE DB Source Output]"
-          TopLeft="404,123">
+          TopLeft="233,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.5,79"
+              EndConnector="19.5,99"
               Start="0,0"
-              End="19.5,71.5">
+              End="19.5,91.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,45.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
+                    Point1="0,45.5"
+                    Point2="0,49.5"
+                    Point3="4,49.5" />
                   <mssgle:LineSegment
-                    End="15.5,39.5" />
+                    End="15.5,49.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.5,39.5"
-                    Point2="19.5,39.5"
-                    Point3="19.5,43.5" />
+                    Point1="15.5,49.5"
+                    Point2="19.5,49.5"
+                    Point3="19.5,53.5" />
                   <mssgle:LineSegment
-                    End="19.5,71.5" />
+                    End="19.5,91.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -399,19 +639,6 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Load Authorized PlanView projects\OLE Load Mapped Projects">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DFT Load Authorized PlanView projects\OLE get mapped projects">
     <Properties>
       <Property>
@@ -421,6 +648,19 @@ cast ( p.ppl_code as varchar(10) ) as ppl_code
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load Authorized PlanView projects\OLE Populate Authorized Projects Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
