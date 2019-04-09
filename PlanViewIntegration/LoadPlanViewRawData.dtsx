@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadPlanViewRawData"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{27E4C9A9-127C-4A84-963C-1CBD1B1E8A08}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{C40F2B76-B8A5-4281-B6C4-341391AC4177}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,6 +24,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;Initial Catalog=HCAPROD_Copy;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[xrpswpdbsspp01.hca.corpad.net.PerViewDataMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{38AE4A51-9659-4E39-9A1A-D0C48F8B1217}"
+      DTS:ObjectName="xrpswpdbsspp01.hca.corpad.net.PerViewDataMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=xrpswpdbsspp01.hca.corpad.net;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -17680,24 +17690,9 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{2E34D9F5-5F87-4608-8F64-C03663CE5C96}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Rebuild Planview Primary Keys and Indexes"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
+      DTS:Description="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:Disabled="True"
       DTS:DTSID="{C3DA5192-334D-4E44-A201-1A37C20D9F05}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -17707,9 +17702,7 @@
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{1D394D16-EE13-4191-9506-61ACCBD1394F}"
-          SQLTask:SqlStatementSource="declare @qry nvarchar(max);&#xA;select @qry = &#xA;(SELECT  'DROP INDEX ' + ix.name + ' ON ' + OBJECT_NAME(ID) + '; '&#xA;FROM  sysindexes ix&#xA;WHERE   ix.Name IS NOT null and ix.Name like '%PK_%'&#xA;for xml path(''));&#xA;&#xA;select @qry &#xA;exec sp_executesql @qry&#xA;&#xA;select * from sys.databases&#xA;select * from sys.sysindexes &#xA;&#xA;go&#xA;ALTER TABLE [ip].[baseline] DROP CONSTRAINT [PK_baseline_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[cri] DROP CONSTRAINT [PK_cri_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[cri_assoc] DROP CONSTRAINT [PK_cri_code_assoc] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[epm_strat_work] DROP CONSTRAINT [PK_epm_strat_work] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[ip_user] DROP CONSTRAINT [PK_ip_user_name] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[issue] DROP CONSTRAINT [PK_issue_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[planning_entity] DROP CONSTRAINT [PK_planning_entity_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[project_tree] DROP CONSTRAINT [PK_project_tree_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[risk] DROP CONSTRAINT [PK_risk_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[st_planning_entity] DROP CONSTRAINT [PK_st_planning_entity_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[structure] DROP CONSTRAINT [PK_structure_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[structure_tree] DROP CONSTRAINT [PK_structure_tree_code] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[wf_team] DROP CONSTRAINT [PK_wf_team] WITH ( ONLINE = OFF )&#xA;go&#xA;ALTER TABLE [ip].[workflow] DROP CONSTRAINT [PK_workflow_id] WITH ( ONLINE = OFF )&#xA;go&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;ALTER TABLE ip.baseline alter column baseline_code varchar(10) NOT NULL&#xA;alter TABLE [ip].[cri]  alter column [cri_code] varchar(10) NOT NULL&#xA;alter TABLE [ip].[cri_assoc]  alter column [cri_code] varchar(10) NOT NULL&#xA;alter TABLE [ip].[epm_strat_work]  alter column [strategy_code] varchar(10) NOT NULL&#xA;alter TABLE [ip].[epm_strat_work]  alter column [planning_code] varchar(10) NOT NULL&#xA;alter table [ip].[ip_user]&#x9;alter column [user_name] varchar(10) NOT NULL&#xA;alter table [ip].planning_entity&#x9;alter column planning_code varchar(10) NOT NULL&#xA;alter table [ip].project_tree&#x9;alter column dsc_code varchar(10) NOT NULL&#xA;alter table [ip].project_tree&#x9;alter column anc_code varchar(10) NOT NULL&#xA;alter table [ip].issue&#x9;alter column issue_code varchar(10) NOT NULL&#xA;alter table [ip].risk&#x9;alter column risk_code varchar(10) NOT NULL&#xA;alter table [ip].st_planning_entity&#x9;alter column baseline_code varchar(10) NOT NULL&#xA;alter table [ip].st_planning_entity&#x9;alter column planning_code varchar(10) NOT NULL&#xA;alter table [ip].structure&#x9;alter column structure_code varchar(10) NOT NULL&#xA;alter table [ip].structure_tree&#x9;alter column dsc_code varchar(10) NOT NULL&#xA;alter table [ip].structure_tree&#x9;alter column anc_code varchar(10) NOT NULL&#xA;alter table [ip].wf_team&#x9;alter column workflow_id varchar(10) NOT NULL&#xA;alter table [ip].wf_team&#x9;alter column place int NOT NULL&#xA;alter table [ip].workflow&#x9;alter column workflow_id varchar(10) NOT NULL&#xA;&#xA;&#xA;go&#xA;ALTER TABLE ip.baseline ADD CONSTRAINT PK_baseline_code PRIMARY KEY CLUSTERED (baseline_code); &#xA;go &#xA;ALTER TABLE [ip].[cri] ADD CONSTRAINT PK_cri_code PRIMARY KEY CLUSTERED ([cri_code]);  &#xA;go&#xA;ALTER TABLE [ip].[cri_assoc]  ADD CONSTRAINT PK_cri_code_assoc PRIMARY KEY CLUSTERED ([cri_code]);  &#xA;go&#xA;ALTER TABLE [ip].[epm_strat_work]  ADD CONSTRAINT PK_epm_strat_work PRIMARY KEY CLUSTERED ([strategy_code] ASC , [planning_code] ASC ) ;&#xA;go&#xA;alter table [ip].[ip_user] add constraint PK_ip_user_name primary key clustered ([user_name] ASC );&#xA;go&#xA;alter table [ip].planning_entity add constraint PK_planning_entity_code primary key clustered (planning_code ASC );&#xA;go&#xA;alter table [ip].project_tree add constraint PK_project_tree_code      primary key clustered (dsc_code ASC , anc_code ASC);&#xA;go&#xA;alter table [ip].issue&#x9;add constraint PK_issue_code       primary key clustered (issue_code ASC  );&#xA;go&#xA;alter table [ip].risk&#x9;add constraint PK_risk_code       primary key clustered (risk_code ASC  );&#xA;go&#xA;alter table [ip].st_planning_entity&#x9;add constraint PK_st_planning_entity_code     primary key clustered (baseline_code ASC,  planning_code ASC );&#xA;go&#xA;alter table [ip].structure&#x9;add constraint PK_structure_code    primary key clustered (structure_code ASC );&#xA;go&#xA;alter table [ip].structure_tree&#x9;add constraint PK_structure_tree_code  primary key clustered (dsc_code ASC , anc_code ASC );&#xA;go&#xA;alter table [ip].wf_team&#x9;add constraint PK_wf_team   primary key clustered (workflow_id ASC , place ASC ) ;&#xA;go&#xA;alter table [ip].workflow&#x9;add constraint PK_workflow_id  primary key clustered (workflow_id ASC );&#xA;go&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -17763,7 +17756,7 @@
         <NodeLayout
           Size="205,42"
           Id="Package\DFT Load PlanView Tables"
-          TopLeft="301,144" />
+          TopLeft="298,143" />
         <NodeLayout
           Size="286,42"
           Id="Package\Rebuild Planview Primary Keys and Indexes"
@@ -17774,18 +17767,18 @@
           TopLeft="304,39" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="401.75,81">
+          TopLeft="400.25,81">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63"
+              EndConnector="0,62"
               Start="0,0"
-              End="0,55.5">
+              End="0,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.5" />
+                    End="0,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17796,18 +17789,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="402.25,186">
+          TopLeft="400.75,185">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67"
+              EndConnector="0,68"
               Start="0,0"
-              End="0,59.5">
+              End="0,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.5" />
+                    End="0,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17816,10 +17809,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="379,364" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -17827,7 +17816,7 @@
     design-time-name="Package\DFT Load PlanView Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="212,42"
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView wf_team"
@@ -17967,9 +17956,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18003,9 +17990,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18039,9 +18024,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18075,9 +18058,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18099,9 +18080,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18135,9 +18114,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18159,9 +18136,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18195,9 +18170,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18231,9 +18204,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18255,9 +18226,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18291,9 +18260,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18327,9 +18294,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18351,9 +18316,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18387,9 +18350,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18411,9 +18372,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

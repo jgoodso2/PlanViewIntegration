@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadProjectStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="249"
-  DTS:VersionGUID="{1ABC8508-5DCC-4DB3-BC0E-A9E70367FCC1}">
+  DTS:VersionBuild="259"
+  DTS:VersionGUID="{A8A869BD-AD5E-4354-B81C-490098E1F505}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -67,7 +67,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACrRBpB+MTkoUCNTAIn9hl0AAAAAASAAACgAAAAEAAAAEVqY/HDrER2jiZmz+LVeXMoAAAASKhFFPFVXE8MqgMza25mdyMB86v9Mso2rI0U0AuvVVFYXYaVcnHboxQAAABB0yY9N4TUKrMfcBAZPLCyv5bfUA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABikxMEFsEZDP5nXUnB4FAMAAAAAASAAACgAAAAEAAAAECrszFvZ4eStBGUesVRhlYoAAAA7BXKaxpqLiZDW6EujHgf7H5bPKE7YbZWr2vHoDLve6s1zSAm0mpljhQAAAB+JmkyZUeAU8C0x6Yj2dVwo91p7A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -82,7 +82,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAUmDSUvVohnXvowYCYqwUEAAAAAASAAACgAAAAEAAAADDUo4QKmK/JRI/++wBWZpwQAAAA1ev/aHLOQxuHfrjSAOLzZhQAAAB3u96QGSI7KQP3+6KVOYgUCOCJ1Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABDl5/wiLa7L10ZR80W5pBGAAAAAASAAACgAAAAEAAAAGqFmgUxJDWcETWG6F5ebNkQAAAAMeiBsmvY2G8Vxq5zLtc4fBQAAADa9nu+qW7EqANPA4fD284bP3NVwQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -107,7 +107,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD3vQrO7DuBTNIUaJZ4V5qQAAAAAASAAACgAAAAEAAAAApoY1hTg5ZuJTa0mbi16JIQAAAADKJojgy3d70xlBDnCRMgFRQAAABRBTYRHUPDy6Eo6kJJvvY/fAL81g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC6cD5nRBqSFXbgiAb6gHeBAAAAAASAAACgAAAAEAAAAHcKvzuEEWkkBji2/GOn4o4QAAAAQcuweAUAJcWtyEGwDkUa/BQAAAByDfdqLU0WqFhJBo27IPf6cDEBrg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -173,7 +173,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Add Constraints"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -328,7 +328,10 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
 , cast ( 	[Exclude from Exec Status Summary Report] as [varchar](4000) ) as 	[Exclude from Exec Status Summary Report]
 , cast ( 	[Project Chargeback Category] as [varchar](4000) ) as 	[Project Chargeback Category]
 , cast ( 	[Medicare ChargeBack Allowable] as [varchar](4000) ) as 	[Medicare ChargeBack Allowable]
-, cast (    'No' as varchar(4) ) as [Shell Project Flag] 
+
+, cast (    [Shell Project Flag]  as varchar(4) ) as [Shell Project Flag] 
+
+
 , cast ( 	[Project Code] as [varchar](4000) ) as 	[Project Code]
 , cast ( 	[PM Engagement] as [varchar](4000) ) as 	[PM Engagement]
 , cast ( 	[Portfolio Funding Source] as [varchar](4000) ) as 	[Portfolio Funding Source]
@@ -2931,7 +2934,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_project]</property>
+                  name="OpenRowset">[dbo].[combined_proj]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -4490,6 +4493,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
       DTS:refId="Package\DFT Load PlanView Project Summary Data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{2D3FECCB-B388-491F-9366-3B9859D60542}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -5444,7 +5448,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_issues]</property>
+                  name="OpenRowset">[dbo].[issues_combined]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6264,7 +6268,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_risks]</property>
+                  name="OpenRowset">[dbo].[risks_combined]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6950,7 +6954,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_issues]</property>
+                  name="OpenRowset">[dbo].[issues_combined]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -7988,7 +7992,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_project]</property>
+                  name="OpenRowset">[dbo].[combined_proj]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -9238,7 +9242,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[dim_risks]</property>
+                  name="OpenRowset">[dbo].[risks_combined]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -9542,6 +9546,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\Load PerView Task Data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{86930265-8EFC-4B70-A443-594EAB63B01C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -11674,6 +11679,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\Load PlanView Task Data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{674F654E-BB58-431E-B5D0-F00E07BAA328}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -12754,6 +12760,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\SQL Truncate All Task Tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1d5d5129-80b6-43e1-8c28-dcb85c081c4b}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -12768,32 +12775,33 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\SQL Truncate Dim_Project"
+      DTS:refId="Package\SQL Truncate combined_proj table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{CB578507-D49B-4A2A-9C35-EE61DCA72C0E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="SQL Truncate Dim_Project"
+      DTS:ObjectName="SQL Truncate combined_proj table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1C68DF7F-09E6-4422-A2DC-4F5469D6D215}"
-          SQLTask:SqlStatementSource="truncate table Dim_Project" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table combined_proj" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\SQL Truncate EPMProjectSummary"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{FB4F5745-8E9F-45D3-AE72-E33A2267D8FE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate EPMProjectSummary"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12810,12 +12818,12 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate Issues and Risks Tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1C68DF7F-09E6-4422-A2DC-4F5469D6D215}"
-          SQLTask:SqlStatementSource="&#xA;truncate table [dbo].[dim_issues]&#xA;truncate table [dbo].[dim_risks]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="&#xA;truncate table [dbo].[issues_combined]&#xA;truncate table [dbo].[risks_combined]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -12839,12 +12847,13 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\SQL Update Project Summary (run SP)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{3DF08F96-3105-47EC-8F79-415880A1B986}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Update Project Summary (run SP)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12866,7 +12875,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{9418D2E8-7E40-40C6-B299-4D63DCEBCE7F}"
-      DTS:From="Package\SQL Truncate Dim_Project"
+      DTS:From="Package\SQL Truncate combined_proj table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\DFT Load PerView Projects" />
@@ -12984,11 +12993,11 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
           Id="Package\Add Constraints"
           TopLeft="470,587" />
         <NodeLayout
-          Size="208,42"
+          Size="206,42"
           Id="Package\DFT Load PerView Projects"
           TopLeft="50,135" />
         <NodeLayout
-          Size="281,42"
+          Size="279,42"
           Id="Package\DFT Load PlanView Project Summary Data"
           TopLeft="32,535" />
         <NodeLayout
@@ -13004,7 +13013,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
           Id="Package\DFT Populate Planview Issues"
           TopLeft="625,213" />
         <NodeLayout
-          Size="230,42"
+          Size="228,42"
           Id="Package\DFT Populate PlanView Projects"
           TopLeft="52,221" />
         <NodeLayout
@@ -13028,15 +13037,15 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
           Id="Package\SQL Truncate All Task Tables"
           TopLeft="999,318" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\SQL Truncate Dim_Project"
+          Size="242,42"
+          Id="Package\SQL Truncate combined_proj table"
           TopLeft="58,40" />
         <NodeLayout
           Size="245,42"
           Id="Package\SQL Truncate EPMProjectSummary"
           TopLeft="39,336" />
         <NodeLayout
-          Size="260,42"
+          Size="258,42"
           Id="Package\SQL Truncate Issues and Risks Tables"
           TopLeft="759,31" />
         <NodeLayout
@@ -13049,7 +13058,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
           TopLeft="37,443" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="154,177">
+          TopLeft="153,177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -13083,18 +13092,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="157.25,82">
+          TopLeft="179,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="-26,53"
               Start="0,0"
-              End="0,45.5">
+              End="-26,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-22,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22,26.5"
+                    Point2="-26,26.5"
+                    Point3="-26,30.5" />
+                  <mssgle:LineSegment
+                    End="-26,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13105,30 +13126,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="914.2,73">
+          TopLeft="888,73">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="69.3,167"
+              EndConnector="95.5,167"
               Start="0,0"
-              End="69.3,159.5">
+              End="95.5,159.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.5383304940375" />
+                    End="0,79.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,70.5383304940375"
-                    Point2="0,74.5383304940375"
-                    Point3="4,74.5383304940375" />
+                    Point1="0,79.5"
+                    Point2="0,83.5"
+                    Point3="4,83.5" />
                   <mssgle:LineSegment
-                    End="65.3,74.5383304940375" />
+                    End="91.5,83.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="65.3,74.5383304940375"
-                    Point2="69.3,74.5383304940375"
-                    Point3="69.3,78.5383304940375" />
+                    Point1="91.5,83.5"
+                    Point2="95.5,83.5"
+                    Point3="95.5,87.5" />
                   <mssgle:LineSegment
-                    End="69.3,159.5" />
+                    End="95.5,159.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13173,30 +13194,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="313,556">
+          TopLeft="311,556">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="157,52"
+              EndConnector="159,52"
               Start="0,0"
-              End="149.5,52">
+              End="151.5,52">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="74.5,0" />
+                    End="75.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="74.5,0"
-                    Point2="78.5,0"
-                    Point3="78.5,4" />
+                    Point1="75.5,0"
+                    Point2="79.5,0"
+                    Point3="79.5,4" />
                   <mssgle:LineSegment
-                    End="78.5,48" />
+                    End="79.5,48" />
                   <mssgle:CubicBezierSegment
-                    Point1="78.5,48"
-                    Point2="78.5,52"
-                    Point3="82.5,52" />
+                    Point1="79.5,48"
+                    Point2="79.5,52"
+                    Point3="83.5,52" />
                   <mssgle:LineSegment
-                    End="149.5,52" />
+                    End="151.5,52" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13207,30 +13228,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="204,263">
+          TopLeft="202.666666666667,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="769,334"
+              EndConnector="770.333333333333,334"
               Start="0,0"
-              End="769,326.5">
+              End="770.333333333333,326.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,162.786171574904" />
+                    End="0,162.798691234717" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,162.786171574904"
-                    Point2="0,166.786171574904"
-                    Point3="4,166.786171574904" />
+                    Point1="0,162.798691234717"
+                    Point2="0,166.798691234717"
+                    Point3="4,166.798691234717" />
                   <mssgle:LineSegment
-                    End="765,166.786171574904" />
+                    End="766.333333333333,166.798691234717" />
                   <mssgle:CubicBezierSegment
-                    Point1="765,166.786171574904"
-                    Point2="769,166.786171574904"
-                    Point3="769,170.786171574904" />
+                    Point1="766.333333333333,166.798691234717"
+                    Point2="770.333333333333,166.798691234717"
+                    Point3="770.333333333333,170.798691234717" />
                   <mssgle:LineSegment
-                    End="769,326.5" />
+                    End="770.333333333333,326.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13241,30 +13262,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="130,263">
+          TopLeft="129.333333333333,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.5,73"
+              EndConnector="32.1666666666667,73"
               Start="0,0"
-              End="31.5,65.5">
+              End="32.1666666666667,65.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5025906735751" />
+                    End="0,25.5052264808362" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.5025906735751"
-                    Point2="0,29.5025906735751"
-                    Point3="4,29.5025906735751" />
+                    Point1="0,25.5052264808362"
+                    Point2="0,29.5052264808362"
+                    Point3="4,29.5052264808362" />
                   <mssgle:LineSegment
-                    End="27.5,29.5025906735751" />
+                    End="28.1666666666667,29.5052264808362" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.5,29.5025906735751"
-                    Point2="31.5,29.5025906735751"
-                    Point3="31.5,33.5025906735751" />
+                    Point1="28.1666666666667,29.5052264808362"
+                    Point2="32.1666666666667,29.5052264808362"
+                    Point3="32.1666666666667,33.5052264808362" />
                   <mssgle:LineSegment
-                    End="31.5,65.5" />
+                    End="32.1666666666667,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13365,7 +13386,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="170.5,485">
+          TopLeft="170,485">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -13421,30 +13442,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="952,73">
+          TopLeft="950.5,73">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="174,44"
+              EndConnector="175.5,44"
               Start="0,0"
-              End="174,36.5">
+              End="175.5,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.9644670050761" />
+                    End="0,10.9667519181586" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.9644670050761"
-                    Point2="0,14.9644670050761"
-                    Point3="4,14.9644670050761" />
+                    Point1="0,10.9667519181586"
+                    Point2="0,14.9667519181586"
+                    Point3="4,14.9667519181586" />
                   <mssgle:LineSegment
-                    End="170,14.9644670050761" />
+                    End="171.5,14.9667519181586" />
                   <mssgle:CubicBezierSegment
-                    Point1="170,14.9644670050761"
-                    Point2="174,14.9644670050761"
-                    Point3="174,18.9644670050761" />
+                    Point1="171.5,14.9667519181586"
+                    Point2="175.5,14.9667519181586"
+                    Point3="175.5,18.9667519181586" />
                   <mssgle:LineSegment
-                    End="174,36.5" />
+                    End="175.5,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13455,30 +13476,30 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="863.8,73">
+          TopLeft="825.5,73">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-127.8,140"
+              EndConnector="-89.5,140"
               Start="0,0"
-              End="-127.8,132.5">
+              End="-89.5,132.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.4872231686542" />
+                    End="0,43.6214833759591" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,58.4872231686542"
-                    Point2="0,62.4872231686542"
-                    Point3="-4,62.4872231686542" />
+                    Point1="0,43.6214833759591"
+                    Point2="0,47.6214833759591"
+                    Point3="-4,47.6214833759591" />
                   <mssgle:LineSegment
-                    End="-123.8,62.4872231686542" />
+                    End="-85.5,47.6214833759591" />
                   <mssgle:CubicBezierSegment
-                    Point1="-123.8,62.4872231686542"
-                    Point2="-127.8,62.4872231686542"
-                    Point3="-127.8,66.4872231686542" />
+                    Point1="-85.5,47.6214833759591"
+                    Point2="-89.5,47.6214833759591"
+                    Point3="-89.5,51.6214833759591" />
                   <mssgle:LineSegment
-                    End="-127.8,132.5" />
+                    End="-89.5,132.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13490,7 +13511,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         <AnnotationLayout
           Text="Only load PlanView Projects that have been associated with PerView Projects via &quot;mapping&quot;"
           ParentId="Package"
-          Size="211,66"
+          Size="211,64"
           Id="36ce34ea-37c4-45d8-bbfa-50beb17757a6"
           TopLeft="324,212">
           <AnnotationLayout.FontInfo>
@@ -14028,7 +14049,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
     design-time-name="Package\Load PerView Task Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,42"
           Id="Package\Load PerView Task Data\OLE DB Source"
@@ -14056,38 +14077,19 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load PerView Task Data\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load PerView Task Data\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load PlanView Task Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="173,42"
           Id="Package\Load PlanView Task Data\OLE DB Destination"
@@ -14127,7 +14129,9 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

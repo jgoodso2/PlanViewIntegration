@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadResourceData"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{045EC956-DF06-43C8-8162-A7C719F6A173}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{977A56B8-00AF-455E-B092-FA6C92DC3347}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -90,8 +90,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{8303E996-85B4-4329-B6E3-6153BD3A0232}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
+                  connectionManagerID="{4D49830A-B585-4B5B-9A31-70CF87817794}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart.reader]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -799,13 +799,13 @@ SELECT
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="243,42"
-          Id="Package\SQL Truncate dim_resources table"
-          TopLeft="252,93" />
-        <NodeLayout
           Size="153,42"
           Id="Package\Data Flow Task"
           TopLeft="355,195" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\SQL Truncate dim_resources table"
+          TopLeft="252,93" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="373.5,135">
@@ -851,37 +851,37 @@ SELECT
         <NodeLayout
           Size="152,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="351,100" />
+          TopLeft="350,98" />
         <NodeLayout
           Size="173,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="292,257" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="427,142">
+          TopLeft="426,140">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-48.5,115"
+              EndConnector="-47.5,117"
               Start="0,0"
-              End="-48.5,107.5">
+              End="-47.5,109.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,54.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,53.5"
-                    Point2="0,57.5"
-                    Point3="-4,57.5" />
+                    Point1="0,54.5"
+                    Point2="0,58.5"
+                    Point3="-4,58.5" />
                   <mssgle:LineSegment
-                    End="-44.5,57.5" />
+                    End="-43.5,58.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-44.5,57.5"
-                    Point2="-48.5,57.5"
-                    Point3="-48.5,61.5" />
+                    Point1="-43.5,58.5"
+                    Point2="-47.5,58.5"
+                    Point3="-47.5,62.5" />
                   <mssgle:LineSegment
-                    End="-48.5,107.5" />
+                    End="-47.5,109.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -894,14 +894,6 @@ SELECT
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
@@ -911,6 +903,14 @@ SELECT
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

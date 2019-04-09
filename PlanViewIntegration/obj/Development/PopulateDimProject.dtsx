@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PopulateDimProject"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{98B67C6F-A0A2-44C4-B66A-BA0F49A4689B}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{F3DB0FEA-04E4-40C6-BD47-E9F1974494C4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -67,7 +67,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADCDp1HIyGASzDThkkC/2HfAAAAAASAAACgAAAAEAAAAGIaV5tja5i3MsVBGEqEfO4oAAAA1NhabTZ/nbRNEkIYXCt66Cga13mMBCXZoT8C5lBWbUyUcASFpT1iCxQAAAD2N7hZwFWzvbdCfp75f+pojBRpKg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABIM/lgJ9UOVBjXL/1GBI+9AAAAAASAAACgAAAAEAAAAFLgz6YpeCJOkRGYSn7wvtcoAAAARNuXJLsGANE8xhZo4Aj2M1JPhTAQBPgmVtLlGwhrPSQ/OU6MZUPaKRQAAADvh3XGPirU5o9VHwhmW4nMimkrpQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -92,7 +92,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABDApLwFWze2IqIfcWw6e7kAAAAAASAAACgAAAAEAAAAJymPsChmD4sBDymVSW+QaEQAAAAtu/VWBZbLTV7LkOLgr3KjBQAAACIW/mmPHDAfdUsRxkdOrfePm3rcA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABWmDxLjCfBLwf5DkREMYJOAAAAAASAAACgAAAAEAAAABeQuxGvdCbuS4XMw8OuPUgQAAAAR8aN82vtqw90nyTNZOo3HxQAAAArzO8ku/DNAJLBj7/hHVVag/H3Rg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -117,7 +117,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYFmi7fyyw0ewrdreUgBEtgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACSc0dJvxz+tayL8+/ZvgbMAAAAAASAAACgAAAAEAAAAOvfkLQR1kKM7WfCSHq07ZMQAAAAwpzS3Y2jbFaOY/qDLttpwxQAAACC2kuB8flmlRwJAO6JPfe3tzKBGQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAU4hF+2RUHwNe8OQ4wjR6DAAAAAASAAACgAAAAEAAAAJBnJ1ZKfG5ups4PC6DaX4oQAAAAZWYimUVHTI+3W/67zZ23dBQAAAB0CyXG6PY+oXv8v/VhDvfI+uSKHw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -241,7 +241,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[dim_project]</property>
+                      name="OpenRowset">[dbo].[combined_proj]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1952,7 +1952,7 @@ where ppl_code = ?</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[dim_project]</property>
+                      name="OpenRowset">[dbo].[combined_proj]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3627,7 +3627,7 @@ where ppl_code = ?</property>
 , cast ( 	[Exclude from Exec Status Summary Report] as [varchar](4000) ) as 	[Exclude from Exec Status Summary Report]
 , cast ( 	[Project Chargeback Category] as [varchar](4000) ) as 	[Project Chargeback Category]
 , cast ( 	[Medicare ChargeBack Allowable] as [varchar](4000) ) as 	[Medicare ChargeBack Allowable]
-, cast (    'No' as varchar(4) ) as [Shell Project Flag] 
+, cast (    [Shell Project Flag] as varchar(4) ) as [Shell Project Flag] 
 , cast ( 	[Project Code] as [varchar](4000) ) as 	[Project Code]
 , cast ( 	[PM Engagement] as [varchar](4000) ) as 	[PM Engagement]
 , cast ( 	[Portfolio Funding Source] as [varchar](4000) ) as 	[Portfolio Funding Source]
@@ -6233,12 +6233,12 @@ where projectUID = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Project_Summary Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
-              SQLTask:SqlStatementSource="EXEC&#x9; [dbo].[usp_UpdateFactEPMProjectSummary_New]&#xA;&#x9;&#x9;@projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="EXEC&#x9; [dbo].[usp_UpdateFactEPMProjectSummary]&#xA;&#x9;&#x9;@projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::projectUID"
@@ -6332,12 +6332,12 @@ where projectUID = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Each PlanView Project"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
-              SQLTask:SqlStatementSource="delete from dim_project where ppl_code = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="delete from combined_proj where ppl_code = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::pplCode"
@@ -6407,12 +6407,12 @@ where projectUID = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Each Project from dim_project"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
-              SQLTask:SqlStatementSource="delete from dim_project where projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="delete from combined_proj where projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::projectUID"
@@ -6431,7 +6431,7 @@ where projectUID = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Each Project from project_summary"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6475,7 +6475,7 @@ where projectUID = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PerView Projects to Update and Store in a Var"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6497,7 +6497,7 @@ where projectUID = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PlanView Projects to Update and Store in a Var"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6519,12 +6519,12 @@ where projectUID = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Remove Unmapped PlanView Projects"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
-          SQLTask:SqlStatementSource="  delete from dim_project &#xA;  where ppl_code is not null  &#xA;  and ppl_code not in  (select distinct pv.ppl_code &#xA;  from [mapperDB_test].[dbo].[PlanViewProjects] pv )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="  delete from combined_proj &#xA;  where ppl_code is not null  &#xA;  and ppl_code not in  (select distinct pv.ppl_code &#xA;  from [mapperDB_test].[dbo].[PlanViewProjects] pv )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -6536,7 +6536,7 @@ where projectUID = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Update Mapper Audit Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6606,11 +6606,11 @@ where projectUID = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161,42"
           Id="Package\Add Planview Projects\Add each project"
-          TopLeft="40.4444444444445,22.6666666666666" />
+          TopLeft="40.4444444444445,21.6666666666666" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -6639,7 +6639,7 @@ where projectUID = ?</property>
           TopLeft="191.833333333333,51.4444444444445">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-15.611111111111,35.3333333333333"
               Start="0,0"
               End="-15.611111111111,27.8333333333333">
@@ -6673,7 +6673,7 @@ where projectUID = ?</property>
           TopLeft="155.722222222222,207.555555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="11.5555555555556,28"
               Start="0,0"
               End="11.5555555555556,20.5">
@@ -6733,7 +6733,7 @@ where projectUID = ?</property>
           TopLeft="158.694444444445,65.4444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,23.4444444444446"
               Start="0,0"
               End="0,15.9444444444446">
@@ -6758,7 +6758,7 @@ where projectUID = ?</property>
           Id="Package\Clear Out Updated Projects"
           TopLeft="90.1111111111109,144.333333333333" />
         <NodeLayout
-          Size="317,42"
+          Size="315,42"
           Id="Package\Get PerView Projects to Update and Store in a Var"
           TopLeft="112.555555555556,25.5555555555556" />
         <NodeLayout
@@ -6778,7 +6778,7 @@ where projectUID = ?</property>
           TopLeft="862.222222222222,293.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,44.333333333333"
               Start="0,0"
               End="0,36.833333333333">
@@ -6800,15 +6800,15 @@ where projectUID = ?</property>
           TopLeft="857.416666666667,592.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,41.7777777777779"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.777777777777"
               Start="0,0"
-              End="0,34.2777777777779">
+              End="0,34.277777777777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.2777777777779" />
+                    End="0,34.277777777777" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6819,10 +6819,10 @@ where projectUID = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="267.083333333333,67.5555555555556">
+          TopLeft="266.583333333333,67.5555555555556">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,76.7777777777774"
               Start="0,0"
               End="0,69.2777777777774">
@@ -6844,7 +6844,7 @@ where projectUID = ?</property>
           TopLeft="263.777777777778,373.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,53"
               Start="0,0"
               End="0,45.5">
@@ -6866,10 +6866,10 @@ where projectUID = ?</property>
           TopLeft="859,792.444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="10.4999999999998,53.1111111111111"
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,53.111111111111"
               Start="0,0"
-              End="10.4999999999998,45.6111111111111">
+              End="10.5,45.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6880,13 +6880,13 @@ where projectUID = ?</property>
                     Point2="0,26.5555555555555"
                     Point3="4,26.5555555555555" />
                   <mssgle:LineSegment
-                    End="6.49999999999977,26.5555555555555" />
+                    End="6.5,26.5555555555555" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.49999999999977,26.5555555555555"
-                    Point2="10.4999999999998,26.5555555555555"
-                    Point3="10.4999999999998,30.5555555555555" />
+                    Point1="6.5,26.5555555555555"
+                    Point2="10.5,26.5555555555555"
+                    Point3="10.5,30.5555555555555" />
                   <mssgle:LineSegment
-                    End="10.4999999999998,45.6111111111111" />
+                    End="10.5,45.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6900,7 +6900,7 @@ where projectUID = ?</property>
           TopLeft="858.416666666667,380">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,56.666666666667"
               Start="0,0"
               End="0,49.166666666667">
@@ -6924,7 +6924,7 @@ where projectUID = ?</property>
     design-time-name="Package\Add Planview Projects\Add each project">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="152,42"
           Id="Package\Add Planview Projects\Add each project\OLE DB Source"
@@ -6964,9 +6964,7 @@ where projectUID = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6997,7 +6995,7 @@ where projectUID = ?</property>
     design-time-name="Package\Add Projects\Update Each Project (add to dim_Project)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="205,42"
           Id="Package\Add Projects\Update Each Project (add to dim_Project)\OLE Get Project to Update"
@@ -7011,7 +7009,7 @@ where projectUID = ?</property>
           TopLeft="470,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,103"
               Start="0,0"
               End="0,95.5">

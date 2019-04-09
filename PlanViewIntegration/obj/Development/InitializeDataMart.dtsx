@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="InitializeDataMart"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{35D74924-B016-458A-BF1D-9EDE71BABC1A}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{A1CD3B08-16C6-4C4B-A782-D5C10B2BD048}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Rebuild Project Audit Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -55,7 +55,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create dim_assignment Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -72,7 +72,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create dim_project Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="8">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -89,7 +89,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create dim_resource table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -106,7 +106,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create dim_task Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -129,6 +129,23 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
           SQLTask:SqlStatementSource="&#xA;USE PerViewDataMart&#xA;&#xA;IF EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dim_issues]') AND type IN (N'U')) &#xA;BEGIN &#xA;   DROP TABLE [dim_issues]&#xA;END &#xA;&#xA;&#xA;CREATE TABLE [dbo].[dim_issues](&#xA;&#x9;[puid] [char](42)  NULL,&#xA;&#x9;[iuid] [char](42)  NULL,&#xA;&#x9;[ppl_code] [varchar](12) NULL,&#xA;&#x9;[ProjectUID] [uniqueidentifier] NULL,&#xA;&#x9;[IssueUniqueID] [uniqueidentifier]  NULL,&#xA;&#x9;[IssueID] [int]  NULL,&#xA;&#x9;[Title] [varchar](100) NULL,&#xA;&#x9;[AssignedToResource] [varchar](100) NULL,&#xA;&#x9;[NumberOfAttachments] [int] NULL,&#xA;&#x9;[DueDate] [datetime] NULL,&#xA;&#x9;[Category] [varchar](100) NULL,&#xA;&#x9;[Status] [varchar](100) NULL,&#xA;&#x9;[Priority] [varchar](100) NULL,&#xA;&#x9;[Owner] [varchar](100) NULL,&#xA;&#x9;[Discussion] [varchar](max) NULL,&#xA;&#x9;[Resolution] [varchar](max) NULL,&#xA;&#x9;[CreateByResource] [varchar](100) NULL,&#xA;&#x9;[CreatedDate] [datetime] NULL,&#xA;&#x9;[ModifiedByResource] [varchar](100) NULL,&#xA;&#x9;[ModifiedDate] [datetime] NULL,&#xA;&#x9;[IsFolder] [bit] null,&#xA;&#x9;[ItemRelativeUrlPath] [varchar](1024) NULL,&#xA;&#x9;[AssignedToUserClaimsAccount] [varchar](100) NULL,&#xA;&#x9;[CreateByUserClaimsAccount] [varchar](100) NULL,&#xA;&#x9;[ModifiedByUserClaimsAccount] [varchar](100) NULL,&#xA;&#x9;[issueCount] [int] null &#xA;&#x9;)&#xA;&#xA;&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Create List Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7F51A6D4-4283-497B-B54F-78A7672437A2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Create List Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{75684CBA-4D1D-4BF9-AE97-542BEF8F4F4E}"
+          SQLTask:SqlStatementSource="EXEC&#x9;[dbo].[CreateSharePointListDataTables]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -157,7 +174,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create ProjectSecurityTable"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="8">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -174,7 +191,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create Risks Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="9">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -191,7 +208,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Create Task Summary Fact Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="9">
+      DTS:ThreadHint="10">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -208,7 +225,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Drop and Create Views (incomplete)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="10">
+      DTS:ThreadHint="11">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -225,7 +242,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Populate Mapper Test Data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="11">
+      DTS:ThreadHint="12">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -247,6 +264,10 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
+          Size="208,42"
+          Id="Package\Rebuild Project Audit Table"
+          TopLeft="705,420" />
+        <NodeLayout
           Size="243,42"
           Id="Package\SQL Create dim_assignment Table"
           TopLeft="714,205" />
@@ -267,6 +288,10 @@
           Id="Package\SQL Create Issues Table"
           TopLeft="49,50" />
         <NodeLayout
+          Size="165,42"
+          Id="Package\SQL Create List Tables"
+          TopLeft="65,412" />
+        <NodeLayout
           Size="270,48"
           Id="Package\SQL Create Project Summary Fact Table"
           TopLeft="323,86" />
@@ -285,15 +310,11 @@
         <NodeLayout
           Size="274,42"
           Id="Package\SQL Drop and Create Views (incomplete)"
-          TopLeft="369,436" />
+          TopLeft="352,399" />
         <NodeLayout
           Size="231,42"
           Id="Package\SQL Populate Mapper Test Data"
           TopLeft="58,308" />
-        <NodeLayout
-          Size="208,42"
-          Id="Package\Rebuild Project Audit Table"
-          TopLeft="705,420" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
