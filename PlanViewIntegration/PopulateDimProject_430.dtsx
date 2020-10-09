@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PARAIXI8265P"
   DTS:CreatorName="HCA\IXI8265"
-  DTS:DTSID="{137E2BEC-D3F4-4AF9-8BD1-98C9F88821F8}"
+  DTS:DTSID="{82C7855A-DCA3-4962-84F2-5EEEB224FA10}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
-  DTS:ObjectName="PopulateDimProject"
+  DTS:ObjectName="PopulateDimProject_430"
   DTS:PackageType="5"
   DTS:VersionBuild="99"
-  DTS:VersionGUID="{01BEE9A2-1AAF-412B-A90A-37CA6B2AD187}">
+  DTS:VersionGUID="{182C0AD0-87FB-417C-A023-2C2963F89834}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.HCAPROD_Copy]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{1D394D16-EE13-4191-9506-61ACCBD1394F}"
+      DTS:DTSID="{BAA21BD3-343C-47F9-8C4C-6A1CA78EF24C}"
       DTS:ObjectName="xrdcwpdbsmsp03.HCAPROD_Copy">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -29,7 +29,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.mapperDB_test]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0957CA09-2989-443A-B9A8-2571B1B85544}"
+      DTS:DTSID="{07CB77E7-20EF-4C74-9E00-C5E192FB5284}"
       DTS:ObjectName="xrdcwpdbsmsp03.mapperDB_test">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +39,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+      DTS:DTSID="{72153A70-F512-4ED7-A215-8907C6B1E172}"
       DTS:ObjectName="xrdcwpdbsmsp03.PerViewDataMart">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -49,7 +49,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrdcwpdbsmsp03.PerViewDataMart 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{1C68DF7F-09E6-4422-A2DC-4F5469D6D215}"
+      DTS:DTSID="{FC18FFD3-040F-4CA8-A1F9-0ADB06BABAB1}"
       DTS:ObjectName="xrdcwpdbsmsp03.PerViewDataMart 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -59,7 +59,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6E8B76AF-A707-4FAD-8641-D0D106CE7AA7}"
+      DTS:DTSID="{740DA4C3-AB66-4A71-BC3E-605B7ECD381C}"
       DTS:ObjectName="xrpswpdbsspp01.ProjectWebApp 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -67,14 +67,14 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEcAAEVlKsEe6h1ImaXpYsAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADiQbsf2bnHhkb8iuVRcoEkAAAAAASAAACgAAAAEAAAAAOu2w0msdTtZzB4JNGZwcUoAAAAc0daKgf4o416Sh5sbPS9cse718+6f9x+xdRGNqmRLh4XAq9ToyujiBQAAADy/7EXuuS4iDWmhQ0nnXgqMQShzg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEcAAEVlKsEe6h1ImaXpYsAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABjCb+QuaxM28SQfsFPi6IwAAAAAASAAACgAAAAEAAAAAdYLNulrcorkY80cuO/TCcoAAAAI+2DoQrM1Z26tpQvIxqkbsxRsTG2FwuSywMQ6Ddgk7V1B/llT/6QPxQAAAB401rO3Fedzu2foIfCJytNhEz9Jw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp 2]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F72EA422-89A8-4C81-A927-EEC3B8EEC8D6}"
+      DTS:DTSID="{94C6A34F-AA12-4DA1-B29C-4D4830E27D10}"
       DTS:ObjectName="xrpswpdbsspp01.ProjectWebApp 2">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -84,7 +84,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp 2 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{C2B89D95-0384-414B-85E8-04D3B25E84FA}"
+      DTS:DTSID="{AD751722-8CF9-4BB1-8A00-D47A4941151F}"
       DTS:ObjectName="xrpswpdbsspp01.ProjectWebApp 2 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -94,7 +94,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrpswpdbsspp01.ProjectWebApp.reader]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8B6E71A1-787F-4BA6-9A38-36E7882706B6}"
+      DTS:DTSID="{F53B4964-4AF5-4DAC-9096-D500541B456A}"
       DTS:ObjectName="xrpswpdbsspp01.ProjectWebApp.reader">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -102,14 +102,14 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEcAAEVlKsEe6h1ImaXpYsAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAG0Nozh78DCDrPWQPRz/zcAAAAAASAAACgAAAAEAAAADP0IwdWw1iPVzqJoFPfwUgQAAAAUv4+Fn7juwjpCfh2diA60RQAAAD5SwUjt+Mdi12/7rnKQ2+GayFHhw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEcAAEVlKsEe6h1ImaXpYsAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABxX+5tkwoSwKpD309HhxgHAAAAAASAAACgAAAAEAAAACgJ2bOhgc583GBfJ86ZinkQAAAARbIGNXKfmLFlpbprN6BqpxQAAACqEXB0zozqvLituaPxSc/+ti16nw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{706491C8-1DCC-4DA0-B78F-3DCDA3968A6A}"
+      DTS:DTSID="{57903B01-88C6-491A-BFBD-34DA5D19B950}"
       DTS:ObjectName="xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -119,7 +119,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp.reader]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{88E18143-CDEA-4D4E-B4A6-DCDB1B2814E6}"
+      DTS:DTSID="{498F08C5-F335-412A-8988-8F96E66854A1}"
       DTS:ObjectName="xrpswqdbsspp01.hcaqa.corpadqa.net.ProjectWebApp.reader">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -127,7 +127,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEcAAEVlKsEe6h1ImaXpYsAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAdhWAg0fW3a4v2w5oTnaVgAAAAAASAAACgAAAAEAAAAEv6rXMcjTv/JtlUeGe9/JoQAAAA03/Kf5VrHk5X1X9zfGgE6hQAAAAj28Efrxs8hBqP+GY3fAtvxdEiag</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEcAAEVlKsEe6h1ImaXpYsAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB0a45oCTyXK8cAG8bt5n3FAAAAAASAAACgAAAAEAAAAFCoRcTZ9IpAzG/w75oC0egQAAAAWisyHxFUIqfoop89JH9BpRQAAAB0VZQhFYyU+KDqnyOk1uVZb5qoHQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -135,7 +135,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2F13DE6F-2DCE-489D-B35C-F1A8E136BC6F}"
+      DTS:DTSID="{34A466F8-8062-4FBF-8C1C-2F8D374EA987}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="perviewProjectsToUpdate">
@@ -153,7 +153,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{60FB1AA6-9DEB-4582-936A-1A0DD0F59B98}"
+      DTS:DTSID="{5530ABAF-5771-4610-9C08-A1D5CF7ADD9D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="planviewProjectsToUpdate">
@@ -171,7 +171,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9EF5D7B0-4284-4D73-943A-F8CBC4FC5EE1}"
+      DTS:DTSID="{20DD6AB9-384C-44C2-8140-374E74C62C78}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="projectUID">
@@ -181,7 +181,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{95BA8062-6A08-41CE-B8B8-FC6E428B489A}"
+      DTS:DTSID="{877F004E-B8F1-4F99-8AF4-E36E1EB089FD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="rowcount">
@@ -194,14 +194,14 @@
       DTS:refId="Package\Add Planview Projects"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{8D435217-7215-4D5B-9308-C8ED238733B2}"
+      DTS:DTSID="{AD2B8ED9-4D88-42C9-9831-A556C4B4A6D5}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Add Planview Projects">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{A56DE051-1D97-4103-84F7-0C7F7287DCE2}"
-        DTS:ObjectName="{A56DE051-1D97-4103-84F7-0C7F7287DCE2}">
+        DTS:DTSID="{6DBC6EDC-990C-4B36-9C61-6E332934A0FF}"
+        DTS:ObjectName="{6DBC6EDC-990C-4B36-9C61-6E332934A0FF}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -211,7 +211,7 @@
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{7192E421-AB3D-4C32-A2DB-45C0B0523B8C}"
+          DTS:DTSID="{F49D0725-9EC8-4353-9C0B-4CEA534BFAD4}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="ppl_code">
@@ -225,7 +225,7 @@
           DTS:refId="Package\Add Planview Projects\Add each project"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E99A156C-F9BA-4E79-B584-6D94072E4A1B}"
+          DTS:DTSID="{C648D5AB-CFC7-4B60-98C2-C6C4BC079C26}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Add each project"
@@ -1246,7 +1246,7 @@ where ppl_code = ?</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"0:Input",{7192E421-AB3D-4C32-A2DB-45C0B0523B8C};</property>
+                      name="ParameterMapping">"0:Input",{F49D0725-9EC8-4353-9C0B-4CEA534BFAD4};</property>
                   </properties>
                   <connections>
                     <connection
@@ -1888,8 +1888,8 @@ where ppl_code = ?</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{2AF3F39B-B8AA-4243-B825-8F5E80CFB282}"
-          DTS:ObjectName="{2AF3F39B-B8AA-4243-B825-8F5E80CFB282}"
+          DTS:DTSID="{4EB90026-75B1-4D30-BA31-EA22D89884D7}"
+          DTS:ObjectName="{4EB90026-75B1-4D30-BA31-EA22D89884D7}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::ppl_code" />
       </DTS:ForEachVariableMappings>
@@ -1898,14 +1898,14 @@ where ppl_code = ?</property>
       DTS:refId="Package\Add Projects"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{8EB70FF4-645A-4659-B9A1-B7C0E3805865}"
+      DTS:DTSID="{F58C2D81-F143-4750-A535-44CEFC1E7A93}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Add Projects">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{DC7971C9-0AAE-465E-995D-2054E8B26FC5}"
-        DTS:ObjectName="{DC7971C9-0AAE-465E-995D-2054E8B26FC5}">
+        DTS:DTSID="{0BE05181-F36C-4251-823B-BD11D47EA642}"
+        DTS:ObjectName="{0BE05181-F36C-4251-823B-BD11D47EA642}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -1919,7 +1919,7 @@ where ppl_code = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{38B9C060-104A-481C-99E7-042E096DCC4C}"
+          DTS:DTSID="{E2D73D3D-BCAD-47FE-8B88-7CFACC0AC673}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Assignments for Each Project"
@@ -1934,7 +1934,7 @@ where ppl_code = ?</property>
           DTS:refId="Package\Add Projects\Update Each Project (add to dim_Project)"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{6EA183EB-F1E2-46BE-A3D8-2305867E0A4C}"
+          DTS:DTSID="{EF2DB0CA-F118-4736-8FDE-C443793861C6}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Each Project (add to dim_Project)"
@@ -2866,64 +2866,6 @@ where ppl_code = ?</property>
                           cachedName="relativeURL"
                           externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[relativeURL]"
                           lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[relativeURL]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProjectIsConfidential]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="5"
-                          cachedName="ProjectIsConfidential"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectIsConfidential]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectIsConfidential]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumberOfOverDueMilestones]"
-                          cachedDataType="i4"
-                          cachedName="NumberOfOverDueMilestones"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfOverDueMilestones]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfOverDueMilestones]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumberOfOverDueTasks]"
-                          cachedDataType="i4"
-                          cachedName="NumberOfOverDueTasks"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfOverDueTasks]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfOverDueTasks]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NumberOfUpcomingTasks]"
-                          cachedDataType="i4"
-                          cachedName="NumberOfUpcomingTasks"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfUpcomingTasks]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfUpcomingTasks]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OverDueMilestones]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="4000"
-                          cachedName="OverDueMilestones"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OverDueMilestones]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[OverDueMilestones]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OverDueTasks]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="4000"
-                          cachedName="OverDueTasks"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OverDueTasks]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[OverDueTasks]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpcomingTasks]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="4000"
-                          cachedName="UpcomingTasks"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpcomingTasks]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpcomingTasks]" />
-                        <inputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProjectStatusURLRef]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="ProjectStatusURLRef"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectStatusRptURL]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectStatusURLRef]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3566,54 +3508,6 @@ where ppl_code = ?</property>
                           dataType="str"
                           length="255"
                           name="relativeURL" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectIsConfidential]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
-                          name="ProjectIsConfidential" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfOverDueMilestones]"
-                          dataType="i4"
-                          name="NumberOfOverDueMilestones" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfOverDueTasks]"
-                          dataType="i4"
-                          name="NumberOfOverDueTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOfUpcomingTasks]"
-                          dataType="i4"
-                          name="NumberOfUpcomingTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OverDueMilestones]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="OverDueMilestones" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OverDueTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="OverDueTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpcomingTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="UpcomingTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProjectStatusRptURL]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="ProjectStatusRptURL" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpcomingMilestones]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="UpcomingMilestones" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3667,102 +3561,7 @@ where ppl_code = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">with OverDueTasksMilestones as (
-
-SELECT  	t1.ProjectUID
-		  , t1.NumberOfOverDueTasks
-		  , t1.NumberOfOverDueMilestones
-		  , SUBSTRING(t1.OverDueTasks,2,(LEN(t1.OverDueTasks) - 1)) AS OverDueTasks
-		  , SUBSTRING(t1.OverDueMilestones,2,(LEN(t1.OverDueMilestones) - 1)) AS OverDueMilestones
-		  -- 02/16/2017 - David Trussa - Added UpcomingTasks column
-		  , t1.NumberOfUpcomingTasks
-		  , SUBSTRING(t1.UpcomingTasks,2,(LEN(t1.UpcomingTasks) - 1)) AS UpcomingTasks	
-	FROM	(
-			SELECT	t2.ProjectUID
-				  , SUM(t2.NumberOfOverDueTasks) AS NumberOfOverDueTasks
-				  , SUM(t2.NumberOfOverDueMilestones) AS NumberOfOverDueMilestones
-				  -- 02/08/2017 - David Trussa - Added TaskID to OverDueTasks and OverDueMilestones
-				  , LTRIM(RTRIM(STUFF((	SELECT	'|' + CAST(t3.TaskID AS VARCHAR(10)) + ' - ' + CAST(t3.TaskName AS VARCHAR(100))
-												FROM	PerViewDataMart.dbo.[ufn_GetOverDueTasks](t2.ProjectUID) t3
-												WHERE	1=1
-												GROUP BY t3.TaskName, t3.BaselineFinish, t3.TaskID
-												--ORDER BY t3.BaselineFinish
-												ORDER BY t3.TaskID
-												FOR XML PATH('')
-											  ), 1, 0, ''
-								))) AS [OverDueTasks]
-				  -- 02/08/2017 - David Trussa - Added TaskID to OverDueTasks and OverDueMilestones
-				  , LTRIM(RTRIM(STUFF((	SELECT	'|' + CAST(t4.TaskID AS VARCHAR(10)) + ' - ' + CAST(t4.TaskName AS VARCHAR(100))
-												FROM	PerViewDataMart.dbo.[ufn_GetOverDueMilestones](t2.ProjectUID) t4
-												WHERE	1=1
-												GROUP BY t4.TaskName,  t4.BaselineFinish, t4.TaskID
-												--ORDER BY t4.BaselineFinish
-												ORDER BY t4.TaskID
-												FOR XML PATH('')
-											  ), 1, 0, ''
-								))) AS [OverDueMilestones]
-				  -- 02/16/2017 - David Trussa - Added UpcomingTasks column
-				  , SUM(t2.NumberOfUpcomingTasks) AS NumberOfUpcomingTasks
-				  , LTRIM(RTRIM(STUFF((	SELECT	'|' + CAST(t5.TaskID AS VARCHAR(10)) + ' - ' + CAST(t5.TaskName AS VARCHAR(100)) + ' - ' + CONVERT(VARCHAR(10),t5.FinishDate,101)
-												FROM	PerViewDataMart.dbo.[ufn_GetUpcomingTasks](t2.ProjectUID) t5
-												WHERE	1=1
-												GROUP BY t5.TaskName, t5.FinishDate, t5.TaskID
-												--ORDER BY t3.BaselineFinish
-												ORDER BY t5.TaskID
-												FOR XML PATH('')
-											  ), 1, 0, ''
-								))) AS [UpcomingTasks]
-			FROM	(
-					SELECT	TUV0.ProjectUID
-							, CASE WHEN TUV1.TaskUID IS NULL THEN 0 ELSE 1 END AS NumberOfOverDueTasks
-							, CASE WHEN TUV2.TaskUID IS NULL THEN 0 ELSE 1 END AS NumberOfOverDueMilestones
-							, TUV1.TaskName AS OverDueTask
-							, TUV1.TaskBaseline0FinishDate AS OverDueTaskBaselineFinish
-							, TUV2.TaskName AS OverDueMilestone
-							, TUV2.TaskBaseline0FinishDate AS OverDueMilestoneBaselineFinish
-							-- 02/16/2017 - David Trussa - Added UpcomingTasks column
-							, CASE WHEN TUV3.TaskUID IS NULL THEN 0 ELSE 1 END AS NumberOfUpcomingTasks
-							, TUV3.TaskName AS UpcomingTask
-							, TUV3.TaskFinishDate AS UpcomingTaskFinishDate
-					FROM	ProjectWebApp.dbo.MSP_EpmTask_UserView TUV0 WITH(NOLOCK)
-							LEFT JOIN ProjectWebApp.dbo.MSP_EpmTask_UserView TUV1 WITH(NOLOCK)
-								ON TUV0.ProjectUID = TUV1.ProjectUID AND TUV0.TaskUID = TUV1.TaskUID
-									AND (TUV1.[TaskDuration] &gt;= 1 OR TUV1.[Milestone Flag] = 'Yes' OR TUV1.[TaskIsMilestone] = 1) 
-									AND (CAST(TUV1.TaskBaseline0FinishDate AS DATE) &lt; CAST(GETDATE() AS DATE)) 
-									AND (TUV1.TaskPercentCompleted &lt; 100)
-									AND (TUV1.TaskIsSummary = 0)
-							LEFT JOIN ProjectWebApp.dbo.MSP_EpmTask_UserView TUV2 WITH(NOLOCK)
-								ON TUV0.ProjectUID = TUV2.ProjectUID AND TUV0.TaskUID = TUV2.TaskUID
-									AND (TUV2.[TaskDuration] = 0 OR TUV2.[TaskDuration] = 1 OR TUV2.[Milestone Flag] = 'Yes' OR TUV2.[TaskIsMilestone] = 1) 
-									AND (CAST(TUV2.TaskBaseline0FinishDate AS DATE) &lt; CAST(GETDATE() AS DATE)) 
-									AND (TUV2.TaskPercentCompleted &lt; 100)
-									AND (TUV2.TaskIsSummary = 0)
-							-- 02/16/2017 - David Trussa - Added UpcomingTasks column
-							LEFT JOIN ProjectWebApp.dbo.MSP_EpmTask_UserView TUV3 WITH(NOLOCK)
-								ON TUV0.ProjectUID = TUV3.ProjectUID AND TUV0.TaskUID = TUV3.TaskUID
-									AND (CAST(TUV3.TaskFinishDate AS DATE) BETWEEN CAST(GETDATE() AS DATE) AND CAST(DATEADD(DD,14,GETDATE()) AS DATE))
-									AND (TUV3.TaskPercentCompleted &lt; 100)
-									AND (TUV3.TaskIsSummary = 0)
-					--WHERE	TUV0.ProjectUID = ?
-					GROUP BY TUV0.ProjectUID
-						   , TUV1.TaskUID
-						   , TUV1.TaskName
-						   , TUV1.TaskBaseline0FinishDate
-						   , TUV2.TaskUID
-						   , TUV2.TaskName
-						   , TUV2.TaskBaseline0FinishDate
-						   -- 02/16/2017 - David Trussa - Added UpcomingTasks column
-						   , TUV3.TaskUID
-						   , TUV3.TaskName
-						   , TUV3.TaskFinishDate
-					--ORDER BY TUV0.ProjectUID
-					) t2
-			GROUP BY t2.ProjectUID
-			) t1
-			
-			) -- end of task data
-
-			SELECT   top 1   cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(p.ProjectUID AS char(40))), 1, 0)  as char(42)) as puid
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT      cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectUID AS char(40))), 1, 0)  as char(42)) as puid
  ,cast (  p.[ProjectUID] as [uniqueidentifier]  ) as 	[ProjectUID]
 , cast (  p.[ProjectName] as [varchar](255) ) as 	[ProjectName]
 , cast ( 'PerView' as varchar(12) ) as [epm_platform]
@@ -3883,27 +3682,12 @@ SELECT  	t1.ProjectUID
 , cast (  p.[Prioritization Score] as [varchar](4000) ) as 	[Prioritization Score]
 , cast (  p.[Complexity Score] as [varchar](4000) ) as 	[Complexity Score] 
 
--- new fields added 4/30/20 
-, cast (isnull(p.[Confidential Project],'No') as varchar(5))  as ProjectIsConfidential  -- varchar(5)
-, cast( odtm.NumberOfOverDueMilestones as int) as [NumberOfOverDueMilestones]  -- int
-, cast ( odtm.NumberOfOverDueTasks as int ) as [NumberOfOverDueTasks] -- int
-, cast ( odtm.NumberOfUpcomingTasks as int ) as [NumberOfUpcomingTasks]  -- int
-, cast( odtm.OverDueMilestones as  [varchar](4000) )  as [OverDueMilestones] 
-, cast ( odtm.OverDueTasks  as  [varchar](4000) )  as [OverDueTasks] 
-, cast ( odtm.UpcomingTasks  as  [varchar](4000) )  as [UpcomingTasks]
---, cast ('Project%20Status.rdl&amp;ParmProject='
---			+ CAST(p.[ProjectUID] AS VARCHAR (50)) 
---			+ '&amp;ParmActiveStatus=' + CAST(p.[Project Active Status] AS VARCHAR(50))) 
---			--AS ProjectStatusURLRef 
-, cast ('Project%20Status.rdl&amp;ParmProject=' + cast(p.ProjectUID as varchar(50)) + '&amp;ParmActiveStatus=' + cast(p.[Project Active Status] as varchar(50)) as varchar(200)) as ProjectStatusURLRef
 
  from [ProjectWebApp].dbo.MSP_EpmProject_UserView p 
  left join [ProjectWebApp].dbo.msp_epmResource_UserView res   --6714
   on p.ProjectOwnerResourceUID = res.resourceUID  
-  	LEFT JOIN OverDueTasksMilestones odtm
-				ON p.ProjectUID = odtm.ProjectUID
 
-				where p.projectUID = ?</property>
+ where projectUID = ?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3924,7 +3708,7 @@ SELECT  	t1.ProjectUID
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"0:Input",{9EF5D7B0-4284-4D73-943A-F8CBC4FC5EE1};</property>
+                      name="ParameterMapping">"0:Input",{20DD6AB9-384C-44C2-8140-374E74C62C78};</property>
                   </properties>
                   <connections>
                     <connection
@@ -5142,88 +4926,6 @@ SELECT  	t1.ProjectUID
                           lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[relativeURL]"
                           name="relativeURL"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectIsConfidential]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProjectIsConfidential]"
-                          length="5"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectIsConfidential]"
-                          name="ProjectIsConfidential"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfOverDueMilestones]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfOverDueMilestones]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfOverDueMilestones]"
-                          name="NumberOfOverDueMilestones"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfOverDueTasks]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfOverDueTasks]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfOverDueTasks]"
-                          name="NumberOfOverDueTasks"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfUpcomingTasks]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfUpcomingTasks]"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[NumberOfUpcomingTasks]"
-                          name="NumberOfUpcomingTasks"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[OverDueMilestones]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OverDueMilestones]"
-                          length="4000"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[OverDueMilestones]"
-                          name="OverDueMilestones"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[OverDueTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OverDueTasks]"
-                          length="4000"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[OverDueTasks]"
-                          name="OverDueTasks"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpcomingTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpcomingTasks]"
-                          length="4000"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpcomingTasks]"
-                          name="UpcomingTasks"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectStatusURLRef]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProjectStatusURLRef]"
-                          length="200"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProjectStatusURLRef]"
-                          name="ProjectStatusURLRef"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5855,48 +5557,6 @@ SELECT  	t1.ProjectUID
                           dataType="str"
                           length="255"
                           name="relativeURL" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProjectIsConfidential]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
-                          name="ProjectIsConfidential" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfOverDueMilestones]"
-                          dataType="i4"
-                          name="NumberOfOverDueMilestones" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfOverDueTasks]"
-                          dataType="i4"
-                          name="NumberOfOverDueTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NumberOfUpcomingTasks]"
-                          dataType="i4"
-                          name="NumberOfUpcomingTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OverDueMilestones]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="OverDueMilestones" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OverDueTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="OverDueTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpcomingTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          name="UpcomingTasks" />
-                        <externalMetadataColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProjectStatusURLRef]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="ProjectStatusURLRef" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -6648,56 +6308,6 @@ SELECT  	t1.ProjectUID
                           lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Complexity Score]"
                           name="Complexity Score" />
                         <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProjectIsConfidential]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProjectIsConfidential]"
-                          name="ProjectIsConfidential" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfOverDueMilestones]"
-                          dataType="i4"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfOverDueMilestones]"
-                          name="NumberOfOverDueMilestones" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfOverDueTasks]"
-                          dataType="i4"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfOverDueTasks]"
-                          name="NumberOfOverDueTasks" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfUpcomingTasks]"
-                          dataType="i4"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NumberOfUpcomingTasks]"
-                          name="NumberOfUpcomingTasks" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OverDueMilestones]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OverDueMilestones]"
-                          name="OverDueMilestones" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OverDueTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OverDueTasks]"
-                          name="OverDueTasks" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpcomingTasks]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4000"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpcomingTasks]"
-                          name="UpcomingTasks" />
-                        <outputColumn
-                          refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProjectStatusURLRef]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProjectStatusURLRef]"
-                          name="ProjectStatusURLRef" />
-                        <outputColumn
                           refId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
                           lineageId="Package\Add Projects\Update Each Project (add to dim_Project)\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -6729,16 +6339,16 @@ SELECT  	t1.ProjectUID
           DTS:refId="Package\Add Projects\Update Project_Summary Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3452B967-1D2F-49DE-9E1E-81DE9A21D364}"
+          DTS:DTSID="{718FC9D1-75FE-4D83-B326-37EFFD7AD658}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Project_Summary Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+              SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
               SQLTask:SqlStatementSource="EXEC&#x9; [dbo].[usp_UpdateFactEPMProjectSummary]&#xA;&#x9;&#x9;@projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -6754,7 +6364,7 @@ SELECT  	t1.ProjectUID
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:Disabled="True"
-          DTS:DTSID="{C5A84339-5CE2-4399-A014-3414043998C1}"
+          DTS:DTSID="{4EB8D2D0-7AC2-4151-AB91-B49510DC507F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Tasks for Each Project"
@@ -6770,7 +6380,7 @@ SELECT  	t1.ProjectUID
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Add Projects.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{9D88C32B-8F78-4E75-991C-B5116210C64B}"
+          DTS:DTSID="{43F1ED11-182E-4CCB-A6E5-5F6EDBE42242}"
           DTS:From="Package\Add Projects\Update Each Project (add to dim_Project)"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -6778,7 +6388,7 @@ SELECT  	t1.ProjectUID
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Add Projects.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{296EE38C-33E9-4B5B-B81A-0C24AC629406}"
+          DTS:DTSID="{C0F3DB29-0A17-4823-BB97-CCE539D13875}"
           DTS:From="Package\Add Projects\Update Tasks for Each Project"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -6787,8 +6397,8 @@ SELECT  	t1.ProjectUID
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{886C62F8-D5BF-4639-BCED-EEC56E2DADE7}"
-          DTS:ObjectName="{886C62F8-D5BF-4639-BCED-EEC56E2DADE7}"
+          DTS:DTSID="{430A3C50-FD71-4A62-B1B0-DDEFFE1BEF84}"
+          DTS:ObjectName="{430A3C50-FD71-4A62-B1B0-DDEFFE1BEF84}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::projectUID" />
       </DTS:ForEachVariableMappings>
@@ -6797,14 +6407,14 @@ SELECT  	t1.ProjectUID
       DTS:refId="Package\Clear out PlanView Projects"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{A303BC4A-6C1C-4191-AAF9-A5944CEC14C8}"
+      DTS:DTSID="{4A4E840D-7FB3-435A-B558-EB295432E711}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Clear out PlanView Projects">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{1E604962-1134-49A9-A506-56C13214719F}"
-        DTS:ObjectName="{1E604962-1134-49A9-A506-56C13214719F}">
+        DTS:DTSID="{CD68F2EE-6EA6-42F5-A2D1-72FD1EFDA797}"
+        DTS:ObjectName="{CD68F2EE-6EA6-42F5-A2D1-72FD1EFDA797}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -6814,7 +6424,7 @@ SELECT  	t1.ProjectUID
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{F22B37B1-AF26-49E3-8E80-7DDD8FB37051}"
+          DTS:DTSID="{C6C7DCEC-04AC-4268-BBD0-487B2B01799D}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="pplCode">
@@ -6828,16 +6438,16 @@ SELECT  	t1.ProjectUID
           DTS:refId="Package\Clear out PlanView Projects\Delete Each PlanView Project"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0BC412B2-A9AD-4153-B61E-FC21FC384EF3}"
+          DTS:DTSID="{4B81C42A-1DDC-4429-B97C-95B67F83D9F7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Each PlanView Project"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+              SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
               SQLTask:SqlStatementSource="delete from combined_proj where ppl_code = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -6852,8 +6462,8 @@ SELECT  	t1.ProjectUID
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{004F19B2-3605-484C-B7F1-4722F99CB871}"
-          DTS:ObjectName="{004F19B2-3605-484C-B7F1-4722F99CB871}"
+          DTS:DTSID="{22A91788-C505-464C-A8EB-4BB110E63D04}"
+          DTS:ObjectName="{22A91788-C505-464C-A8EB-4BB110E63D04}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::pplCode" />
       </DTS:ForEachVariableMappings>
@@ -6862,14 +6472,14 @@ SELECT  	t1.ProjectUID
       DTS:refId="Package\Clear Out Updated Projects"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{EBA9B7D8-2A42-4AFA-A0C6-95CB4B4C679B}"
+      DTS:DTSID="{E6258ECA-D973-4C8D-A41C-7039CDF71902}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Clear Out Updated Projects">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{3BEF3470-E354-4BA7-B73E-FDC0BADE18C7}"
-        DTS:ObjectName="{3BEF3470-E354-4BA7-B73E-FDC0BADE18C7}">
+        DTS:DTSID="{F7D0E1DB-3D22-4D14-AFC4-0C4833FF3C16}"
+        DTS:ObjectName="{F7D0E1DB-3D22-4D14-AFC4-0C4833FF3C16}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -6879,7 +6489,7 @@ SELECT  	t1.ProjectUID
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{8CA0C2B7-1623-40D6-8DDA-4742758F95AB}"
+          DTS:DTSID="{4E6FFFEF-F21D-4781-8CCB-6B23CA5E21AF}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="ProjectUID">
@@ -6889,7 +6499,7 @@ SELECT  	t1.ProjectUID
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{1FFBFE68-7A40-40BC-82F8-918531A61A7F}"
+          DTS:DTSID="{31EB6E65-8D6C-47EF-8098-F0A7C29F00E5}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="temp">
@@ -6903,16 +6513,16 @@ SELECT  	t1.ProjectUID
           DTS:refId="Package\Clear Out Updated Projects\Delete Each Project from dim_project"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DC6D6BCA-E7E0-43C3-9C55-931330A7CFA8}"
+          DTS:DTSID="{9BC7BBCA-12D9-42CE-8548-6DAE2C495F02}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Each Project from dim_project"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+              SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
               SQLTask:SqlStatementSource="delete from combined_proj where projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -6927,16 +6537,16 @@ SELECT  	t1.ProjectUID
           DTS:refId="Package\Clear Out Updated Projects\Delete Each Project from project_summary"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{89cd8f4b-61e0-46e0-a4ad-f89b0aba2d44}"
+          DTS:DTSID="{157B40C0-99BB-4F47-841A-B3CD33B76301}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Each Project from project_summary"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+              SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
               SQLTask:SqlStatementSource="delete from dbo.EpmProjectSummary where projectUID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -6952,7 +6562,7 @@ SELECT  	t1.ProjectUID
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Clear Out Updated Projects.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{62F4B4DA-C5F5-44A9-A0D0-4283A6879F34}"
+          DTS:DTSID="{F748C4EE-A6DA-4694-99BF-7A2D3305D0B2}"
           DTS:From="Package\Clear Out Updated Projects\Delete Each Project from dim_project"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -6961,8 +6571,8 @@ SELECT  	t1.ProjectUID
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{4DA8687F-CA6F-4540-9052-DF7686B0BF13}"
-          DTS:ObjectName="{4DA8687F-CA6F-4540-9052-DF7686B0BF13}"
+          DTS:DTSID="{4986203E-CDCA-450E-8F27-C66DDE980DAC}"
+          DTS:ObjectName="{4986203E-CDCA-450E-8F27-C66DDE980DAC}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::projectUID" />
       </DTS:ForEachVariableMappings>
@@ -6971,16 +6581,16 @@ SELECT  	t1.ProjectUID
       DTS:refId="Package\Get PerView Projects to Update and Store in a Var"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1950DA52-B4FE-4515-9794-76C05949864E}"
+      DTS:DTSID="{3DFCE359-1836-4129-BC20-71887CE5E9A3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PerView Projects to Update and Store in a Var"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
           SQLTask:SqlStatementSource="EXEC&#x9;[dbo].[usp_EPMProjectAudit_Refresh]"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -6993,16 +6603,16 @@ SELECT  	t1.ProjectUID
       DTS:refId="Package\Get PlanView Projects to Update and Store in a Var"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{422914F4-7640-41D5-B2EE-7D818DD4205A}"
+      DTS:DTSID="{4B7112E1-4B52-47CC-B3A9-E41385953F33}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PlanView Projects to Update and Store in a Var"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0957CA09-2989-443A-B9A8-2571B1B85544}"
+          SQLTask:Connection="{07CB77E7-20EF-4C74-9E00-C5E192FB5284}"
           SQLTask:SqlStatementSource="&#xA;&#xA;  SELECT  &#xA;     distinct  mp.[ppl_Code]  &#xA;&#x9; &#xA;    &#xA; &#xA; FROM [PlanViewProjects] mp   &#xA;&#xA;  where concat(mp.ppl_Code,mp.ProjectGuid)  not in &#xA;  (select  concat( ma.ppl_code, ma.projectGUID ) as boo&#xA;   from [PerViewDataMart].dbo.[mapper_audit] ma &#xA;   )"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -7015,16 +6625,16 @@ SELECT  	t1.ProjectUID
       DTS:refId="Package\Remove Unmapped PlanView Projects"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{649BD5E3-8276-4665-933E-6DC733EC219B}"
+      DTS:DTSID="{FD08CF27-767B-44A9-A1E3-145247A82369}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Remove Unmapped PlanView Projects"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
           SQLTask:SqlStatementSource="  delete from combined_proj &#xA;  where ppl_code is not null  &#xA;  and ppl_code not in  (select distinct pv.ppl_code &#xA;  from [mapperDB_test].[dbo].[PlanViewProjects] pv )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -7032,16 +6642,16 @@ SELECT  	t1.ProjectUID
       DTS:refId="Package\SQL Update Mapper Audit Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{95417AAC-0828-47B5-88DD-8942AAD644D9}"
+      DTS:DTSID="{2AF10B21-9372-4D59-921D-714D732FE164}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Update Mapper Audit Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8303E996-85B4-4329-B6E3-6153BD3A0232}"
+          SQLTask:Connection="{72153A70-F512-4ED7-A215-8907C6B1E172}"
           SQLTask:SqlStatementSource="&#xA;&#xA;   INSERT INTO [dbo].[mapper_audit]&#xA;           ([ppl_code]&#xA;           ,[projectGUID]&#xA;           ,[mappedby34]&#xA;           ,[modifiedDate])&#xA; &#xA;SELECT  &#xA;      mp.[ppl_Code]  &#xA;&#x9;  , mp.ProjectGuid &#xA;&#x9;  , mp.mappedBy34&#xA;&#x9;  , GETDATE() as modifiedDate &#xA;    &#xA;  FROM [mapperDB_test].[dbo].[PlanViewProjects] mp   &#xA;&#xA;  where concat(mp.ppl_Code,mp.ProjectGuid)  not in &#xA;  (select  concat( ma.ppl_code, ma.projectGUID ) as boo&#xA;   from [PerViewDataMart].dbo.[mapper_audit] ma &#xA;   ) &#xA;   ;&#xA;&#xA;&#xA;delete from  [dbo].[mapper_audit]  &#xA;  &#xA;where concat(ppl_Code,ProjectGuid)  not in &#xA;  (select  concat( mp.ppl_code, mp.projectGUID ) as boo&#xA;  &#xA; from [PerViewDataMart].dbo.[mapper_audit] mp &#xA;   ) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -7050,7 +6660,7 @@ SELECT  	t1.ProjectUID
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{520F3861-EE30-40D1-9950-E07EF960AD12}"
+      DTS:DTSID="{1E60A354-E17A-4B38-A58E-4B5C9254A480}"
       DTS:From="Package\Get PlanView Projects to Update and Store in a Var"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -7058,7 +6668,7 @@ SELECT  	t1.ProjectUID
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{ECE7A87A-4DD6-4C77-97E8-C3495F121C32}"
+      DTS:DTSID="{2CF7E092-0781-40EC-A63F-28029067AFC9}"
       DTS:From="Package\Clear out PlanView Projects"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -7066,7 +6676,7 @@ SELECT  	t1.ProjectUID
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{EBF1D128-2861-489E-AFDB-51550FF5E37D}"
+      DTS:DTSID="{9C1C4A79-2579-49C3-83DE-E8EB3F3EAB8B}"
       DTS:From="Package\Get PerView Projects to Update and Store in a Var"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -7074,7 +6684,7 @@ SELECT  	t1.ProjectUID
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{BD9D5057-47B6-4801-BE69-B1809D93ED46}"
+      DTS:DTSID="{0A3F9A62-81B6-46D7-B4ED-27A88E519B30}"
       DTS:From="Package\Clear Out Updated Projects"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -7082,7 +6692,7 @@ SELECT  	t1.ProjectUID
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{C1DD1EAF-0FEA-43A9-BD95-B826A3F2A83B}"
+      DTS:DTSID="{9ACDA771-8202-43E9-81ED-0C8C87C1F8FF}"
       DTS:From="Package\Add Planview Projects"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -7090,7 +6700,7 @@ SELECT  	t1.ProjectUID
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{85D1333F-DD50-4D5A-8C12-2118BBD8DBAC}"
+      DTS:DTSID="{53D30832-FC8A-4326-A3B7-5875E81E5BC5}"
       DTS:From="Package\SQL Update Mapper Audit Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -7425,7 +7035,7 @@ SELECT  	t1.ProjectUID
     design-time-name="Package\Add Planview Projects\Add each project">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="173,42"
           Id="Package\Add Planview Projects\Add each project\OLE DB Destination"
@@ -7465,9 +7075,7 @@ SELECT  	t1.ProjectUID
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

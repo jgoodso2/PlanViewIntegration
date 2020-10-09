@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PopulateSharePointData"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{F5521815-DA45-4EA6-8038-6EA396C0E428}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{D2F31F40-9A6A-42E3-8CF4-91366BA8014E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -103,7 +103,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -876,7 +876,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1415,7 +1415,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -5410,7 +5410,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -5900,7 +5900,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="225,42"
+          Size="223,42"
           Id="Package\DFT Load SharePoint List Data"
           TopLeft="124,219" />
         <NodeLayout
@@ -5909,7 +5909,7 @@
           TopLeft="123,74" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="238,116">
+          TopLeft="237.5,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5938,9 +5938,9 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182,42"
-          Id="Package\DFT Load SharePoint List Data\OLE DB Destination 1"
-          TopLeft="628,218" />
+          Size="185,42"
+          Id="Package\DFT Load SharePoint List Data\OLE Get PWAUserInfo"
+          TopLeft="897,61" />
         <NodeLayout
           Size="219,42"
           Id="Package\DFT Load SharePoint List Data\OLE Get PWAContent_AllLists"
@@ -5950,17 +5950,59 @@
           Id="Package\DFT Load SharePoint List Data\OLE Get PWA_Content_AllUserData"
           TopLeft="36,60" />
         <NodeLayout
+          Size="182,42"
+          Id="Package\DFT Load SharePoint List Data\OLE DB Destination 1"
+          TopLeft="628,218" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\DFT Load SharePoint List Data\OLE DB Destination 2"
+          TopLeft="872,200" />
+        <NodeLayout
           Size="225,42"
           Id="Package\DFT Load SharePoint List Data\OLE Get PWAContent_AllWebs"
           TopLeft="333,61" />
         <NodeLayout
           Size="173,42"
           Id="Package\DFT Load SharePoint List Data\OLE DB Destination"
-          TopLeft="411,217" />
+          TopLeft="367,213" />
         <NodeLayout
           Size="126,42"
           Id="Package\DFT Load SharePoint List Data\OLE Load"
           TopLeft="153,218" />
+        <EdgeLayout
+          Id="Package\DFT Load SharePoint List Data.Paths[OLE DB Source Output3]"
+          TopLeft="989.5,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.5,97"
+              Start="0,0"
+              End="-26.5,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.5"
+                    Point2="0,48.5"
+                    Point3="-4,48.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,48.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,48.5"
+                    Point2="-26.5,48.5"
+                    Point3="-26.5,52.5" />
+                  <mssgle:LineSegment
+                    End="-26.5,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT Load SharePoint List Data.Paths[OLE DB Source Output2]"
           TopLeft="738.5,103">
@@ -6001,26 +6043,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52,114"
+              EndConnector="8,110"
               Start="0,0"
-              End="52,106.5">
+              End="8,102.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53" />
+                    End="0,51" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,53"
-                    Point2="0,57"
-                    Point3="4,57" />
+                    Point1="0,51"
+                    Point2="0,55"
+                    Point3="4,55" />
                   <mssgle:LineSegment
-                    End="48,57" />
+                    End="4,55" />
                   <mssgle:CubicBezierSegment
-                    Point1="48,57"
-                    Point2="52,57"
-                    Point3="52,61" />
+                    Point1="4,55"
+                    Point2="8,55"
+                    Point3="8,59" />
                   <mssgle:LineSegment
-                    End="52,106.5" />
+                    End="8,102.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6063,53 +6105,11 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\DFT Load SharePoint List Data\OLE Get PWAUserInfo"
-          TopLeft="897,61" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\DFT Load SharePoint List Data\OLE DB Destination 2"
-          TopLeft="872,200" />
-        <EdgeLayout
-          Id="Package\DFT Load SharePoint List Data.Paths[OLE DB Source Output3]"
-          TopLeft="989.5,103">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.5,97"
-              Start="0,0"
-              End="-26.5,89.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44.5"
-                    Point2="0,48.5"
-                    Point3="-4,48.5" />
-                  <mssgle:LineSegment
-                    End="-22.5,48.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.5,48.5"
-                    Point2="-26.5,48.5"
-                    Point3="-26.5,52.5" />
-                  <mssgle:LineSegment
-                    End="-26.5,89.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Load SharePoint List Data\OLE DB Destination 1">
+    design-time-name="Package\DFT Load SharePoint List Data\OLE Get PWAUserInfo">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6136,6 +6136,32 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT Load SharePoint List Data\OLE Get PWA_Content_AllUserData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load SharePoint List Data\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Load SharePoint List Data\OLE DB Destination 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6175,32 +6201,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT Load SharePoint List Data\OLE Load">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Load SharePoint List Data\OLE Get PWAUserInfo">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Load SharePoint List Data\OLE DB Destination 2">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

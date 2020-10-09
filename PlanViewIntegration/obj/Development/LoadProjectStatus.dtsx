@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadProjectStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="259"
-  DTS:VersionGUID="{A8A869BD-AD5E-4354-B81C-490098E1F505}">
+  DTS:VersionBuild="264"
+  DTS:VersionGUID="{62272F32-1072-44EC-90BB-98B40FBEE181}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -67,7 +67,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACCYQzAW+L4mnMQ0kUF/e/EAAAAAASAAACgAAAAEAAAAL1+IKBTXH7TFMj5l2tEKdMoAAAA1t6QvFSxcvIb+iuZ02Il3nxTdiNv97YVn5XrE35a6QLPKQtkpZk+eRQAAAD8IKzlLxexkeyA+T9uz+FVd/DwBw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAd7slWtqbp0ySb+plcVDGwQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACNAWrEK25ZcXU7fXwdCZREAAAAAASAAACgAAAAEAAAAIvBjd3goNCDy5SLBU3ZyGgoAAAAAU1fZYAXwpRtoe0Xxzg7yAJ4Tj+lgecXhvznpJbiC1QuegdQ0EQy4xQAAACbd08Wr1fWwU3+KT9QgS6a7Bz32Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -82,7 +82,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABmevAoPgL9C93Uqnk7HlqJAAAAAASAAACgAAAAEAAAAMvg8rYKkABgbeeoqyJUwsQQAAAAI6GhsG6e0zgy2WNbTt39LxQAAABlD/6TMxigfkT6O7f7blSTUgbuvw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAd7slWtqbp0ySb+plcVDGwQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD1cteVh7MgGWfO/U5648JuAAAAAASAAACgAAAAEAAAAFTXSd5D5jJO80RGrc1A8/QQAAAAfSELr5lg3ZDIl19qqGtvPRQAAAASk9Sq74ysuC0dwpyeWU/4B3cu9w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -107,7 +107,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACueJxx5diIL74/U/kOgAHzAAAAAASAAACgAAAAEAAAAPonkWyl5wbvEEAxdEepfEUQAAAASDMq+HhgKvN7kf7rKeZ8URQAAABgSrqgbAlLa+2gyv8YN16aC/Wf3w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAd7slWtqbp0ySb+plcVDGwQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABbk51a03HWBpDRQYslRDd7AAAAAASAAACgAAAAEAAAAHfOqtxwFF9y6UzQp5fD0mgQAAAArWpIYtZzYEm5IBwCWowWgxQAAABA6W5hSMy35cSnBPaEZU3ZfioQXg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -173,7 +173,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Add Constraints"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4961,6 +4961,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
       DTS:refId="Package\DFT Populate PerView Issues"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9AB22547-0F60-41E7-A20C-AC03AC64BD68}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -5806,6 +5807,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
       DTS:refId="Package\DFT Populate PerView Risks"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C59C88B6-527E-4759-8DD8-43EA9F676AF9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -6630,6 +6632,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
       DTS:refId="Package\DFT Populate Planview Issues"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1E1158F7-F781-4606-A7A3-37B816690153}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -7283,7 +7286,7 @@ SELECT     cast(  sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ProjectU
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  
 cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))) , 1, 0) as varchar(42)) as puid
-, cast ( NEWID() as uniqueidentifier ) as projectUID
+, PerViewDataMart.[dbo].[udfIntToGuid] ([ppl_code]) as projectUID
 , cast (ppl_code as varchar(50)) as pplCode 
 , cast (project_name as varchar(255)) as projectName
 , cast ('Planview' as varchar(12) ) as  epm_platform
@@ -8918,6 +8921,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\DFT Populate PlanView Risks"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{714F94C7-241B-474E-BD27-7BBD150B4CA8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -12743,12 +12747,13 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\SQL Populate PerView Task Summary"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1E6CBD28-1D50-4CFF-B569-0555BB912DEA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Populate PerView Task Summary"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12783,7 +12788,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate combined_proj table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12801,7 +12806,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate EPMProjectSummary"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12813,12 +12818,13 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\SQL Truncate Issues and Risks Tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{06074FD2-F218-4693-8B48-7C8D5C44DD82}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate Issues and Risks Tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12830,12 +12836,13 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:refId="Package\SQL Truncate Task Summary"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{429BFEE0-78DF-417A-B0E6-0CEC6D0FB1C8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Truncate Task Summary"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -12853,7 +12860,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL Update Project Summary (run SP)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -13608,7 +13615,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
     design-time-name="Package\DFT Load PlanView Project Summary Data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="173,42"
           Id="Package\DFT Load PlanView Project Summary Data\OLE DB Destination"
@@ -13648,7 +13655,9 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13684,7 +13693,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
     design-time-name="Package\DFT Populate PerView Issues">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="217,42"
           Id="Package\DFT Populate PerView Issues\OLE Populate Perview Issues"
@@ -13724,7 +13733,9 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13755,7 +13766,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
     design-time-name="Package\DFT Populate PerView Risks">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="211,42"
           Id="Package\DFT Populate PerView Risks\OLE Populate Perview Risks"
@@ -13795,7 +13806,9 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13826,7 +13839,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
     design-time-name="Package\DFT Populate Planview Issues">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="223,42"
           Id="Package\DFT Populate Planview Issues\OLE Populate PlanView Issues"
@@ -13866,7 +13879,9 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13906,37 +13921,37 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
         <NodeLayout
           Size="152,42"
           Id="Package\DFT Populate PlanView Projects\OLE DB Source"
-          TopLeft="174,43" />
+          TopLeft="174,44" />
         <NodeLayout
           Size="208,42"
           Id="Package\DFT Populate PlanView Projects\Populate PlanView Projects"
           TopLeft="162,246" />
         <EdgeLayout
           Id="Package\DFT Populate PlanView Projects.Paths[OLE DB Source Output]"
-          TopLeft="250,85">
+          TopLeft="250,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="16,161"
+              EndConnector="16,160"
               Start="0,0"
-              End="16,153.5">
+              End="16,152.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.5" />
+                    End="0,76" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,76.5"
-                    Point2="0,80.5"
-                    Point3="4,80.5" />
+                    Point1="0,76"
+                    Point2="0,80"
+                    Point3="4,80" />
                   <mssgle:LineSegment
-                    End="12,80.5" />
+                    End="12,80" />
                   <mssgle:CubicBezierSegment
-                    Point1="12,80.5"
-                    Point2="16,80.5"
-                    Point3="16,84.5" />
+                    Point1="12,80"
+                    Point2="16,80"
+                    Point3="16,84" />
                   <mssgle:LineSegment
-                    End="16,153.5" />
+                    End="16,152.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13973,7 +13988,7 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
     design-time-name="Package\DFT Populate PlanView Risks">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="217,42"
           Id="Package\DFT Populate PlanView Risks\OLE Populate PlanView Risks"
@@ -14013,7 +14028,9 @@ cast(sys.fn_varbintohexsubstring(0, HashBytes('SHA1', CAST(ppl_code AS char(40))
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

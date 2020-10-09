@@ -5,10 +5,6 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;User ID=reader;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Auto Translate=False;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAEOzW9QJRHUSLBx+WSctUVAAAAAACAAAAAAADZgAAwAAAABAAAAAzemvO8HXZVYVn5OWoHX8oAAAAAASAAACgAAAAEAAAAJd5R7QyDvdQe4t46IUGLVx4AAAAtTQUmMYM0QEzcgrTjMB/pRP9Mkvby5l9nWtQT6mdSWBIDe6ClFdoIKrrH4HWE1zpdZYwr1E/Mv987aTSCmg6FG8/drUf16XfcS48ke0yMaTk4elU9CTRN2Fd5rgAW2qce+q+AKCpfchBwNH3sneSHzHJGbRP0D+IFAAAAH0AOVrOcLcc+A6U81fV1IGHqaad</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=xrdcwpdbsmsp03;User ID=reader;Initial Catalog=PerViewDataMart;Provider=SQLNCLI11.1;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

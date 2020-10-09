@@ -7,12 +7,12 @@
   DTS:CreatorName="HCA\IXI8265"
   DTS:DTSID="{CEF136E0-F47D-4628-9F88-BD8243162BCC}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadPlanViewRawData"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{C40F2B76-B8A5-4281-B6C4-341391AC4177}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{756334B3-FC81-4DC4-8D0A-695D3DBA9739}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -78,7 +78,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -493,7 +493,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -648,7 +648,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -817,7 +817,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -864,14 +864,6 @@
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].Columns[user_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="user_name"
-                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].ExternalColumns[user_name]"
-                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[user_name]" />
                     <inputColumn
                       refId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].Columns[full_name]"
                       cachedCodepage="1252"
@@ -1241,14 +1233,6 @@
                       externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].ExternalColumns[ia_active_dir_user]"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[ia_active_dir_user]" />
                     <inputColumn
-                      refId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].Columns[bi_user]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="512"
-                      cachedName="bi_user"
-                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].ExternalColumns[bi_user]"
-                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[bi_user]" />
-                    <inputColumn
                       refId="Package\DFT Load PlanView Tables\OLE DST ip_user copy.Inputs[OLE DB Destination Input].Columns[reset_pwd_ind]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1616,7 +1600,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1785,7 +1769,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1860,7 +1844,7 @@
                       refId="Package\DFT Load PlanView Tables\OLE DST long_text copy.Inputs[OLE DB Destination Input].Columns[key4]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="20"
                       cachedName="key4"
                       externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE DST long_text copy.Inputs[OLE DB Destination Input].ExternalColumns[key4]"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].Columns[key4]" />
@@ -1898,8 +1882,7 @@
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].Columns[line_number]" />
                     <inputColumn
                       refId="Package\DFT Load PlanView Tables\OLE DST long_text copy.Inputs[OLE DB Destination Input].Columns[line_text]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      cachedDataType="wstr"
                       cachedLength="4000"
                       cachedName="line_text"
                       externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE DST long_text copy.Inputs[OLE DB Destination Input].ExternalColumns[line_text]"
@@ -2036,7 +2019,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4649,7 +4632,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4984,7 +4967,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5125,7 +5108,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5332,7 +5315,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5563,7 +5546,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5704,7 +5687,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6439,7 +6422,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6622,7 +6605,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6887,7 +6870,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -7089,7 +7072,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -7579,7 +7562,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -8207,7 +8190,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -8385,7 +8368,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -8587,7 +8570,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -9147,17 +9130,6 @@
                       name="ia_active_dir_user"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[bi_user]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[bi_user]"
-                      length="512"
-                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[bi_user]"
-                      name="bi_user"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[reset_pwd_ind]"
                       codePage="1252"
                       dataType="str"
@@ -9178,6 +9150,66 @@
                       length="1"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[deleted_ind]"
                       name="deleted_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[ctm_user_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[ctm_user_name]"
+                      length="255"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[ctm_user_name]"
+                      name="ctm_user_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[timed_invite_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[timed_invite_ind]"
+                      length="1"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[timed_invite_ind]"
+                      name="timed_invite_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[invite_expires_on]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[invite_expires_on]"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[invite_expires_on]"
+                      name="invite_expires_on"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[invite_duration_hrs]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[invite_duration_hrs]"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[invite_duration_hrs]"
+                      name="invite_duration_hrs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[inv_session_expires_on]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[inv_session_expires_on]"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[inv_session_expires_on]"
+                      name="inv_session_expires_on"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[depersonalized_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[depersonalized_ind]"
+                      length="1"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].Columns[depersonalized_ind]"
+                      name="depersonalized_ind"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -9461,12 +9493,6 @@
                       length="512"
                       name="ia_active_dir_user" />
                     <externalMetadataColumn
-                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[bi_user]"
-                      codePage="1252"
-                      dataType="str"
-                      length="512"
-                      name="bi_user" />
-                    <externalMetadataColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[reset_pwd_ind]"
                       codePage="1252"
                       dataType="str"
@@ -9478,6 +9504,36 @@
                       dataType="str"
                       length="1"
                       name="deleted_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[ctm_user_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ctm_user_name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[timed_invite_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="timed_invite_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[invite_expires_on]"
+                      dataType="dbTimeStamp"
+                      name="invite_expires_on" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[invite_duration_hrs]"
+                      dataType="i2"
+                      name="invite_duration_hrs" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[inv_session_expires_on]"
+                      dataType="dbTimeStamp"
+                      name="inv_session_expires_on" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Output].ExternalColumns[depersonalized_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="depersonalized_ind" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -9813,13 +9869,6 @@
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[ia_active_dir_user]"
                       name="ia_active_dir_user" />
                     <outputColumn
-                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[bi_user]"
-                      codePage="1252"
-                      dataType="str"
-                      length="512"
-                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[bi_user]"
-                      name="bi_user" />
-                    <outputColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[reset_pwd_ind]"
                       codePage="1252"
                       dataType="str"
@@ -9833,6 +9882,42 @@
                       length="1"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[deleted_ind]"
                       name="deleted_ind" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[ctm_user_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[ctm_user_name]"
+                      name="ctm_user_name" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[timed_invite_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[timed_invite_ind]"
+                      name="timed_invite_ind" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[invite_expires_on]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[invite_expires_on]"
+                      name="invite_expires_on" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[invite_duration_hrs]"
+                      dataType="i2"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[invite_duration_hrs]"
+                      name="invite_duration_hrs" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[inv_session_expires_on]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[inv_session_expires_on]"
+                      name="inv_session_expires_on" />
+                    <outputColumn
+                      refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[depersonalized_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[depersonalized_ind]"
+                      name="depersonalized_ind" />
                     <outputColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -9875,7 +9960,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -9951,7 +10036,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].ExternalColumns[key4]"
-                      length="10"
+                      length="20"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].Columns[key4]"
                       name="key4"
                       truncationRowDisposition="FailComponent" />
@@ -10004,8 +10089,7 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].Columns[line_text]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].ExternalColumns[line_text]"
@@ -10058,7 +10142,7 @@
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].ExternalColumns[key4]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="20"
                       name="key4" />
                     <externalMetadataColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].ExternalColumns[key5]"
@@ -10084,8 +10168,7 @@
                       name="line_number" />
                     <externalMetadataColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Output].ExternalColumns[line_text]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="4000"
                       name="line_text" />
                     <externalMetadataColumn
@@ -10130,7 +10213,7 @@
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Error Output].Columns[key4]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="20"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Error Output].Columns[key4]"
                       name="key4" />
                     <outputColumn
@@ -10162,8 +10245,7 @@
                       name="line_number" />
                     <outputColumn
                       refId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Error Output].Columns[line_text]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="4000"
                       lineageId="Package\DFT Load PlanView Tables\OLE SRC PlanView long_text.Outputs[OLE DB Source Error Output].Columns[line_text]"
                       name="line_text" />
@@ -10221,7 +10303,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -14641,7 +14723,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -14795,7 +14877,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -15105,7 +15187,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -15259,7 +15341,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -16463,7 +16545,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -16689,7 +16771,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -17365,7 +17447,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -17832,7 +17914,7 @@
         <NodeLayout
           Size="228,42"
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView project_tree"
-          TopLeft="598,207" />
+          TopLeft="588,208" />
         <NodeLayout
           Size="205,42"
           Id="Package\DFT Load PlanView Tables\OLE SRC PlanView ip_user"
@@ -18209,18 +18291,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT Load PlanView Tables.Paths[OLE DB Source Output5]"
-          TopLeft="709,249">
+          TopLeft="704,250">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,46.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

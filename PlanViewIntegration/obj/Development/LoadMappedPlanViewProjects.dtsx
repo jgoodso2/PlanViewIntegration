@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadMappedPlanViewProjects"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{740698E8-F149-44CC-A2BE-9E0DEA7B67DE}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{96C2BAC1-5BA3-4C9E-A65B-F46803F7E7A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
